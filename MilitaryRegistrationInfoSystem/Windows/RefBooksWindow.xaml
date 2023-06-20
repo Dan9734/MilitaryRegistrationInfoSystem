@@ -1,0 +1,119 @@
+﻿<Window x:Class="MilitaryRegistrationInfoSystem.Windows.RefBooksWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MilitaryRegistrationInfoSystem.Windows"
+        mc:Ignorable="d"
+       Title="Справочники" Height="274" Width="763" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DockPanel>
+            <TabControl Name="tabControl1">
+                <TabItem Header="Метод изучения" Name="tabItem2">
+                    <DockPanel>
+                        <StackPanel DockPanel.Dock="Bottom">
+                            <ToolBar Height="45" VerticalAlignment="Top">
+                                <Button Name="tsbMethodAdd" ToolTip="Добавить" Click="tsbMethodAdd_Click">
+                                    <Image Source="/Resources/database_add_2107.png" />
+                                </Button>
+                                <Separator />
+                                <Button Name="tsbMethodDelete" ToolTip="Удалить" Click="tsbMethodDelete_Click">
+                                    <Image Source="/Resources/database_delete_7487.png"/>
+                                </Button>
+                                <Separator />
+                                <Button Name="tsbMethodRefresh" ToolTip="Обновить" Click="tsbMethodRefresh_Click">
+                                    <Image Source="/Resources/database_refresh_9744.png" />
+                                </Button>
+                                <Separator />
+                                <Button x:Name="tsbMethodSave" 
+                                        ToolTip="Сохранить" 
+                                        Click="tsbMethodSave_Click">
+                                    <Image Source="/Resources/disk_3464.png" />
+                                </Button>
+                                <Separator />
+                            </ToolBar>
+                        </StackPanel>
+                        <!--DataContext="{StaticResource метод_изученияViewSource}"-->
+                        <Grid >
+                            <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" HorizontalAlignment="Stretch" ItemsSource="{Binding}" Margin="0,0,0,0" Name="метод_изученияDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Stretch">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn x:Name="кодColumn1" Binding="{Binding Path=Код}" Header="Код" Width="SizeToHeader" Visibility="Hidden"/>
+                                    <DataGridTextColumn x:Name="названиеColumn1" Binding="{Binding Path=Название}" Header="Название" Width="*" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </DockPanel>
+                </TabItem>
+                <TabItem Header="Результат изучения" Name="tabItem3">
+                    <DockPanel>
+                        <StackPanel DockPanel.Dock="Bottom">
+                            <ToolBar Height="45" VerticalAlignment="Top">
+                                <Button Name="tsbResultAdd" ToolTip="Добавить" Click="tsbResultAdd_Click">
+                                    <Image Source="/Resources/database_add_2107.png" />
+                                </Button>
+                                <Separator />
+                                <Button Name="tsbResultDelete" ToolTip="Удалить" Click="tsbResultDelete_Click">
+                                    <Image Source="/Resources/database_delete_7487.png"/>
+                                </Button>
+                                <Separator />
+                                <Button Name="tsbResultRefresh" ToolTip="Обновить" Click="tsbResultRefresh_Click">
+                                    <Image Source="/Resources/database_refresh_9744.png" />
+                                </Button>
+                                <Separator />
+                                <Button Name="tsbResultSave" ToolTip="Сохранить" Click="tsbResultSave_Click">
+                                    <Image Source="/Resources/disk_3464.png" />
+                                </Button>
+                                <Separator />
+                            </ToolBar>
+                        </StackPanel>
+                        <!--DataContext="{StaticResource результат_изученияViewSource}"-->
+                        <Grid >
+                            <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" HorizontalAlignment="Stretch" ItemsSource="{Binding}" Margin="0,0,0,0" Name="результат_изученияDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Stretch">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn x:Name="кодColumn2" Binding="{Binding Path=Код}" Header="Код" Width="SizeToHeader" Visibility="Hidden" />
+                                    <DataGridTextColumn x:Name="названиеColumn2" Binding="{Binding Path=Название}" Header="Название" Width="*" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </DockPanel>
+                </TabItem>
+                <TabItem Header="Списки" x:Name="listTabItem">
+                    <!--DataContext="{StaticResource элемент_спискаViewSource}"-->
+                    <DockPanel >
+                        <StackPanel DockPanel.Dock="Bottom">
+                            <ToolBar Height="45" VerticalAlignment="Top">
+                                <Button Name="tsbListElementAdd" ToolTip="Добавить" Click="tsbListElementAdd_Click">
+                                    <Image Source="/Resources/database_add_2107.png" />
+                                </Button>
+                                <Separator />
+                                <Button Name="tsbListElementDelete" ToolTip="Удалить" Click="tsbListElementDelete_Click">
+                                    <Image Source="/Resources/database_delete_7487.png"/>
+                                </Button>
+                                <Separator />
+                                <Button Name="tsbListElementRefresh" ToolTip="Обновить" Click="tsbListElementRefresh_Click">
+                                    <Image Source="/Resources/database_refresh_9744.png" />
+                                </Button>
+                                <Separator />
+                                <Button Name="tsbListElementSave" ToolTip="Сохранить" Click="tsbListElementSave_Click">
+                                    <Image Source="/Resources/disk_3464.png" />
+                                </Button>
+                                <Separator />
+                            </ToolBar>
+                        </StackPanel>
+                        <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Name="элемент_спискаDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn x:Name="кодColumn3" Binding="{Binding Path=Код}" Header="Код" Width="SizeToHeader" Visibility="Hidden" />
+                                <!--ItemsSource="{Binding Source={StaticResource AnketaViewSource}}"-->
+                                <DataGridComboBoxColumn x:Name="код_СписокColumn" Header="Список" Width="300"
+								 SelectedValueBinding="{Binding Path=Код_Список, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}"
+								 DisplayMemberPath="Название" SelectedValuePath="Код"/>
+                                <DataGridTextColumn x:Name="названиеColumn3" Binding="{Binding Path=Название}" Header="Название" Width="*" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </DockPanel>
+                </TabItem>
+            </TabControl>
+        </DockPanel>
+    </Grid>
+</Window>
+

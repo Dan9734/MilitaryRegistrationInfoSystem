@@ -1,0 +1,131 @@
+﻿<Window x:Class="MilitaryRegistrationInfoSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MilitaryRegistrationInfoSystem"
+        mc:Ignorable="d"
+        Title="АСУ учета военнообязанных" Height="500" Width="1000" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Menu DockPanel.Dock="Top" FontSize="14">
+
+            <MenuItem Header="Система">
+                <MenuItem Header="Выход" Name="tsmiExit" Click="tsmiExit_Click" />
+            </MenuItem>
+            <MenuItem Header="Военнообязанный">
+                <MenuItem Header="Добавить" Name="tsmiAdd" Click="tsbAdd_Click" />
+                <MenuItem Header="Редактировать" Name="tsmiEdit" Click="tsbEdit_Click" />
+                <MenuItem Header="Удалить" Name="tsmiDelete" Click="tsbDelete_Click" />
+                <Separator/>
+                <MenuItem Header="Обновить" Name="tsmiRefresh" Click="tsbRefresh_Click" />
+            </MenuItem>
+            <MenuItem Header="Отчеты">
+                <MenuItem Header="Анкета" Name="tsmiReportRecruitQuestionnaire" Click="tsmiReportRecruitQuestionnaire_Click" />
+                <MenuItem Header="Список изучений" Name="tsmiReportRecruitEduList" Click="tsmiReportRecruitEduList_Click" />
+                <MenuItem Header="Сводный отчет" Name="tsmiReportConsolidate" Click="tsmiReportConsolidate_Click" />
+                <Separator/>
+                <MenuItem Header="Редактировать отчеты" Name="reportEditToolStripMenuItem" IsChecked="False" IsCheckable="True" />
+            </MenuItem>
+            <MenuItem Header="Настройки">
+                <MenuItem Header="Справочники" Name="tsmiBook" Click="tsmiBook_Click" />
+                <!--<MenuItem Header="Пользователи" Name="tsmiUser" Click="tsmiUser_Click" />-->
+            </MenuItem>
+        </Menu>
+
+        <StackPanel DockPanel.Dock="Top" Margin="0 20 0 0">
+            <ToolBar  Height="45">
+                <!--<Button x:Name="tsbLogin" 
+                        ToolTip="Вход" 
+                        Click="tsbLogin_Click">
+                    <Image Source="/Resources/door_in_3715.png"/>
+                </Button>-->
+                <Separator />
+
+                <Button x:Name="tsbAdd" 
+                        ToolTip="Добавить" 
+                        Click="tsbAdd_Click">
+                    <Image Source="/Resources/database_add_2107.png" />
+                </Button>
+                <Button  x:Name="tsbEdit" 
+                         ToolTip="Редактировать" 
+                         Click="tsbEdit_Click">
+                    <Image Source="/Resources/database_edit_7543.png" />
+                </Button>
+
+                <Button x:Name="tsbDelete" 
+                        ToolTip="Удалить" 
+                        Click="tsbDelete_Click">
+                    <Image Source="/Resources/database_delete_7487.png"/>
+                </Button>
+                <Separator />
+                <Button x:Name="tsbRefresh" 
+                        ToolTip="Обновить" 
+                        Click="tsbRefresh_Click">
+                    <Image Source="/Resources/database_refresh_9744.png" />
+                </Button>
+                <TextBlock Text="Поиск:"
+                 FontSize="14"
+                 Width="80"             
+                 Foreground="Black"
+                 TextAlignment="Center"
+                 VerticalAlignment="Center"   
+            />
+                <TextBox 
+                    Background="{x:Null}"
+                    BorderBrush="Black"
+                    Width="150"                
+                    Height="45"
+                    Margin="0 0 0 0"
+                    Cursor="IBeam"
+                    FontSize="14" 
+                    Foreground="Black"
+                    x:Name="tbSearch"
+                    TextChanged="tbSearch_TextChanged"
+            />
+                <TextBlock
+                    Text="Фильтр:"
+                    FontSize="14"
+                    Width="80"               
+                    Foreground="Black"
+                    TextAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="0 0 0 0"
+            />
+                <ComboBox 
+                    x:Name="cbSort"
+                    Width="150"                 
+                    Height="45"
+                    FontSize="14"
+                    BorderBrush="Black"
+                    Background="{x:Null}"
+                    SelectionChanged="cbSort_SelectionChanged"               
+                    Margin="0 0 0 0"  
+            />
+            </ToolBar>
+        </StackPanel>
+        <DataGrid
+            x:Name="AllPersonal"
+            VerticalAlignment="Top"
+            MouseDoubleClick="LVEmployee_MouseDoubleClick"
+            AutoGenerateColumns="False"  Background="{x:Null}" Foreground="black" BorderBrush="{x:Null}"
+            SelectionChanged="AllPersonal_SelectionChanged"
+            KeyUp="AllPersonal_KeyUp"
+            IsReadOnly="True" Height="420" Margin="0,64,0,0"
+            >
+            <DataGrid.Columns >
+                <DataGridTextColumn x:Name="фамилияColumn" Binding="{Binding Path=LName}" Header="Фамилия" Width="150" />
+                <DataGridTextColumn x:Name="имяColumn" Binding="{Binding Path=FName}" Header="Имя" Width="120" />
+                <DataGridTextColumn x:Name="отчествоColumn" Binding="{Binding Path=MName}" Header="Отчество" Width="150" />
+                <DataGridTextColumn Header="Дата рождения" Width="*" Binding="{Binding DateBirth}"/>
+                <DataGridTextColumn Header="Паспорт (серия)" Width="*" Binding="{Binding S_Pass}"/>
+                <DataGridTextColumn Header="Паспорт (номер)" Width="*" Binding="{Binding N_Pass}"/>
+                <DataGridTextColumn Header="Результат мед комиссии" Width="*" Binding="{Binding InSummary}" Foreground="Black"/>
+            </DataGrid.Columns>
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Foreground" Value="Black" />
+                </Style>
+            </DataGrid.Resources>
+        </DataGrid>
+    </Grid>
+</Window>

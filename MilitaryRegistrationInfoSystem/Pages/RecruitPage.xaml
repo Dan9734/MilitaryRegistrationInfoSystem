@@ -1,0 +1,69 @@
+﻿<Page x:Class="MilitaryRegistrationInfoSystem.Pages.RecruitPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MilitaryRegistrationInfoSystem.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="420" d:DesignWidth="1000"
+      Title="RecruitPage">
+
+    <Grid>
+        <!--Background="#FFEEF5FD">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Поиск:" 
+                       FontSize="20"
+                       Background="#FFFCCE00"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       Margin="10,10,0,0" Width="68"/>
+
+        <TextBox x:Name="txbSearch" 
+                     Width="180" 
+                     Height="30" 
+                     VerticalAlignment="Top"
+                     HorizontalAlignment="Left" 
+                     Margin="95,8,0,0"
+                     TextChanged="txbSearch_TextChanged"/>
+
+        <ComboBox x:Name="TbSort" 
+                      VerticalAlignment="Top"
+                      HorizontalAlignment="Left"
+                      Width="130"
+                      Height="30"
+                      Margin="295,8,0,0"
+                     />
+        <ListView x:Name="ListDrverFine" Foreground="Black" Height="NaN" Margin="0,43,0,40" Grid.RowSpan="2">
+            <ListView.View>
+                <GridView >
+                    <GridViewColumn Header="Фамилия" 
+                                        Width="100" 
+                                        DisplayMemberBinding="{Binding Driver.LastName}"/>
+                    <GridViewColumn Header="Имя" 
+                                        Width="100" 
+                                        DisplayMemberBinding="{Binding Driver.FirstName}"/>
+                    <GridViewColumn Header="Отчество" 
+                                        Width="100" 
+                                        DisplayMemberBinding="{Binding Driver.Patronimic}"/>
+                    <GridViewColumn Header="Штраф" 
+                                        Width="120" 
+                                        DisplayMemberBinding="{Binding Fine.CodeOfAdminOfenses}"/>
+                    <GridViewColumn Header="Дата выдачи" 
+                                        Width="180" 
+                                        DisplayMemberBinding="{Binding TimePenalty}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="btnAdd" 
+                    Width="155" 
+                    Content="Добавить" 
+                    FontSize="20" 
+                    HorizontalAlignment="Left"
+                    Click="btnAdd_Click" VerticalAlignment="Top" Height="40" Grid.Row="1" Margin="0,10,0,0" />
+
+        <Frame x:Name="frame" Navigated="frame_Navigated" Height="325" VerticalAlignment="Top" Margin="0,80,0,0" Grid.RowSpan="2"/>-->
+    </Grid>
+</Page>

@@ -1,0 +1,274 @@
+﻿<Window x:Class="MilitaryRegistrationInfoSystem.Windows.AddWorkerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MilitaryRegistrationInfoSystem.Windows"
+        mc:Ignorable="d"
+        Title="Добавление нового работника" Height="870" Width="765" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DockPanel Name="dockPanel1">
+
+            <StackPanel DockPanel.Dock="Bottom">
+                <ToolBar Height="45">
+                    <Button Name="BtnAdd" ToolTip="Сохранить" Click="bOk_Click">
+                        <Image Source="/Resources/check.png" />
+                    </Button>
+                    <Separator />
+                    <Button Name="bCancel" ToolTip="Отмена" Click="bCancel_Click">
+                        <Image Source="/Resources/cross.png"/>
+                    </Button>
+                </ToolBar>
+            </StackPanel>
+            <TabControl Name="mainTabControl">
+                <TabItem Header="Основная информация" Name="WorkerMainTabItem">
+                    <StackPanel>
+                        <Grid HorizontalAlignment="Stretch" Name="grid1" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Фамилия:" Width="250" 
+                                   Grid.Column="0" Grid.Row="0" 
+                                   HorizontalAlignment="Left" Margin="3" 
+                                   VerticalAlignment="Center" 
+                                   />
+                            <TextBox Grid.Column="1" Height="23" 
+                                     HorizontalAlignment="Left" 
+                                     Margin="3,3,0,3" Name="LNameTextBox" 
+                                     Text="{Binding Path=Фамилия, Mode=TwoWay, 
+                                     ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                     VerticalAlignment="Center" Width="450" 
+                                     TextChanged="LNameTextBox_TextChanged"
+                                     />
+                        </Grid>
+                        <Grid HorizontalAlignment="Stretch" Name="grid2" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="37" />
+                                <ColumnDefinition Width="219"/>
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Имя:"  Width="250" 
+                                   Grid.Column="0" HorizontalAlignment="Left" 
+                                   Margin="3,0,0,0" VerticalAlignment="Center" 
+                                   Grid.ColumnSpan="2" 
+                                   />
+                            <TextBox Grid.Column="2" Height="23" 
+                                     HorizontalAlignment="Center" 
+                                     Name="FNameTextBox" Margin="3,3,0,3"
+                                     TextChanged="FNameTextBox_TextChanged" 
+                                     Text="{Binding Path=Имя, Mode=TwoWay, 
+                                     ValidatesOnExceptions=true, 
+                                     NotifyOnValidationError=true}" 
+                                     VerticalAlignment="Center" Width="450" 
+                                     />
+                        </Grid>
+                        <Grid HorizontalAlignment="Stretch" Name="grid3" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Отчество:" Width="250" 
+                                   Grid.Column="0" Grid.Row="0" 
+                                   HorizontalAlignment="Left" Margin="3" 
+                                   VerticalAlignment="Center" 
+                                   />
+                            <TextBox Grid.Column="1" Grid.Row="0" 
+                                     Height="23" HorizontalAlignment="Left" 
+                                     Margin="3" Name="MNameTextBox"
+                                     TextChanged="MNameTextBox_TextChanged" 
+                                     VerticalAlignment="Center" Width="450" 
+                                     />
+                        </Grid>
+
+                        <Grid HorizontalAlignment="Stretch" Name="grid4" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Серия паспорта:" Width="250" 
+                                   Grid.Column="0" Grid.Row="0" 
+                                   HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" 
+                                   />
+                            <TextBox Grid.Column="1" Grid.Row="0" 
+                                     Height="23" HorizontalAlignment="Left" 
+                                     Margin="3" Name="SPassTextBox"
+                                     TextChanged="SPassTextBox_TextChanged"
+                                     Text="{Binding Path=Серия_паспорта, Mode=TwoWay, 
+                                     ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                     VerticalAlignment="Center" Width="450" 
+                                     />
+                        </Grid>
+
+                        <Grid HorizontalAlignment="Stretch" Name="grid5" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Номер паспорта:"  Width="250" 
+                               Grid.Column="0" Grid.Row="0" 
+                               HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" />
+                            <TextBox Grid.Column="1" Grid.Row="0" 
+                                 Height="23" HorizontalAlignment="Left" 
+                                 Margin="3" Name="NPassTextBox"
+                                 TextChanged="NPassTextBox_TextChanged"
+                                 Text="{Binding Path=Номер_паспорта, 
+                                 Mode=TwoWay, ValidatesOnExceptions=true, 
+                                 NotifyOnValidationError=true}" VerticalAlignment="Center" Width="450" 
+                                 />
+                        </Grid>
+
+                        <Grid HorizontalAlignment="Stretch" Name="grid6" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Width="250" Content="Должность:" 
+                                   Grid.Column="0" Grid.Row="0" 
+                                   HorizontalAlignment="Left" Margin="3" 
+                                   VerticalAlignment="Center" 
+                                   />
+                            <TextBox Grid.Column="1" Grid.Row="0" 
+                                     Height="23" HorizontalAlignment="Left" 
+                                     Margin="3" Name="PositionTextBox"
+                                     TextChanged="PositionTextBox_TextChanged"
+                                     Text="{Binding Path=Position, 
+                                     Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                     VerticalAlignment="Center" Width="450" 
+                                     />
+                        </Grid>
+                        <Grid  HorizontalAlignment="Stretch" Name="grid11" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Логин:" Width="250" 
+                                   Grid.Column="0" Grid.Row="0" 
+                                   HorizontalAlignment="Left" 
+                                   Margin="3" VerticalAlignment="Center" 
+                                   />
+                            <TextBox Grid.Column="1" Grid.Row="0" 
+                                     Height="23" HorizontalAlignment="Left" 
+                                     Margin="3" Name="LoginTextBox"
+                                     TextChanged="LoginTextBox_TextChanged"
+                                     Text="{Binding Path=Login, Mode=TwoWay, 
+                                     ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                     VerticalAlignment="Center" Width="450" 
+                                     />
+                        </Grid>
+                        <Grid HorizontalAlignment="Stretch" Name="grid12" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Пароль" Width="250" 
+                                   Grid.Column="0" Grid.Row="0" 
+                                   HorizontalAlignment="Left" Margin="3" 
+                                   VerticalAlignment="Center" 
+                                   />
+                            <TextBox Grid.Column="1" Grid.Row="0" 
+                                     Height="23" HorizontalAlignment="Left" 
+                                     Margin="3" Name="PasswordTextBox" 
+                                     TextChanged="PasswordTextBox_TextChanged"
+                                     Text="{Binding Path=Password,
+                                     Mode=TwoWay, ValidatesOnExceptions=true, 
+                                     NotifyOnValidationError=true}" VerticalAlignment="Center" Width="450" 
+                                     />
+                        </Grid>
+                        <Grid HorizontalAlignment="Stretch" Name="grid13" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Права администратора" Width="250" 
+                                   Grid.Column="0" Grid.Row="0" 
+                                   HorizontalAlignment="Left" Margin="3" 
+                                   VerticalAlignment="Center" 
+                                   />
+                            <CheckBox Grid.Column="1" Height="25" 
+                                      Width="25" HorizontalAlignment="Left"  
+                                      x:Name="IsAdminCheckBox" IsChecked="{Binding Path=IsAdmin, 
+                                      Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                      VerticalAlignment="Center" RenderTransformOrigin="0.565,0.597" 
+                                      Margin="3,0,0,0" Checked="IsAdminCheckBox_Checked" 
+                                      />
+                        </Grid>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Дополнительная информация" Name="WorkerSecondTabItem">
+                    <StackPanel>
+                        <Grid HorizontalAlignment="Stretch" Name="grid21" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="42" />
+                                <ColumnDefinition Width="214"/>
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Телефон:" Width="250" 
+                                   Grid.Column="0" HorizontalAlignment="Left" 
+                                   Margin="3,0,0,0" VerticalAlignment="Center" Grid.ColumnSpan="2" 
+                                   />
+                            <TextBox Grid.Column="2" Height="23" 
+                                     HorizontalAlignment="Center" Name="PhoneTextBox"
+                                     TextChanged="PhoneTextBox_TextChanged"
+                                     Text="{Binding Path=Phone, Mode=TwoWay, ValidatesOnExceptions=true, 
+                                     NotifyOnValidationError=true}" VerticalAlignment="Center" 
+                                     Width="450"
+                                     />
+                        </Grid>
+
+                        <Grid HorizontalAlignment="Stretch" Name="grid22" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="37" />
+                                <ColumnDefinition Width="219"/>
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Описание:" Width="250" 
+                                   Grid.Column="0" HorizontalAlignment="Left" 
+                                   Margin="3,0,0,0" VerticalAlignment="Center" Grid.ColumnSpan="2" 
+                                   />
+                            <TextBox Grid.Column="2" Height="23" 
+                                     HorizontalAlignment="Left" Name="DescrTextBox"
+                                     TextChanged="DescrTextBox_TextChanged"
+                                     Text="{Binding Path=Description, Mode=TwoWay, ValidatesOnExceptions=true, 
+                                     NotifyOnValidationError=true}" VerticalAlignment="Center" Width="450" 
+                                     />
+                        </Grid>
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+        </DockPanel>
+    </Grid>
+</Window>

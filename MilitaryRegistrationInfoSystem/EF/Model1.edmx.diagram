@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b26390f77fa54975b7037667995e2c74" Name="Diagram1" ZoomLevel="95">
+        <EntityTypeShape EntityType="MilitaryRegistrationModel.Action" Width="1.5" PointX="5.25" PointY="11.5" />
+        <EntityTypeShape EntityType="MilitaryRegistrationModel.Anketa" Width="1.5" PointX="5.25" PointY="25.875" />
+        <EntityTypeShape EntityType="MilitaryRegistrationModel.Commissar" Width="1.5" PointX="3.75" PointY="22.75" />
+        <EntityTypeShape EntityType="MilitaryRegistrationModel.Doctor" Width="1.5" PointX="0.75" PointY="19" />
+        <EntityTypeShape EntityType="MilitaryRegistrationModel.Education" Width="1.5" PointX="6" PointY="4.875" />
+        <EntityTypeShape EntityType="MilitaryRegistrationModel.GroupHealth" Width="1.5" PointX="5.25" PointY="19.875" />
+        <EntityTypeShape EntityType="MilitaryRegistrationModel.HealthCategory" Width="1.5" PointX="0.75" PointY="13" />
+        <EntityTypeShape EntityType="MilitaryRegistrationModel.Learning" Width="1.5" PointX="5.25" PointY="7.5" />
+        <EntityTypeShape EntityType="MilitaryRegistrationModel.MedicalConclusion" Width="1.5" PointX="5.25" PointY="15.25" />
+        <EntityTypeShape EntityType="MilitaryRegistrationModel.MethodLearning" Width="1.5" PointX="3" PointY="4.125" />
+        <EntityTypeShape EntityType="MilitaryRegistrationModel.Recruit" Width="1.5" PointX="3" PointY="11" />
+        <EntityTypeShape EntityType="MilitaryRegistrationModel.RecruitEducation" Width="1.5" PointX="8.25" PointY="8.5" />
+        <EntityTypeShape EntityType="MilitaryRegistrationModel.RecruitСommission" Width="1.5" PointX="7.5" PointY="16.5" />
+        <EntityTypeShape EntityType="MilitaryRegistrationModel.ResultLearning" Width="1.5" PointX="3" PointY="6.75" />
+        <EntityTypeShape EntityType="MilitaryRegistrationModel.Summons" Width="1.5" PointX="8.25" PointY="12.5" />
+        <EntityTypeShape EntityType="MilitaryRegistrationModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MilitaryRegistrationModel.Voenkomat" Width="1.5" PointX="6" PointY="22.625" />
+        <EntityTypeShape EntityType="MilitaryRegistrationModel.Worker" Width="1.5" PointX="3" PointY="17.75" />
+        <AssociationConnector Association="MilitaryRegistrationModel.FK_Action_Recruit" />
+        <AssociationConnector Association="MilitaryRegistrationModel.FK_Action_Worker" />
+        <AssociationConnector Association="MilitaryRegistrationModel.FK_Anketa_Recruit" />
+        <AssociationConnector Association="MilitaryRegistrationModel.FK_Voenkomat_Commissar" />
+        <AssociationConnector Association="MilitaryRegistrationModel.FK_Worker_Doctor" />
+        <AssociationConnector Association="MilitaryRegistrationModel.FK_ConscriptEducation_Education" />
+        <AssociationConnector Association="MilitaryRegistrationModel.FK_ConscriptionСommission_GroupHelth" />
+        <AssociationConnector Association="MilitaryRegistrationModel.FK_Recruit_HealthCategory" />
+        <AssociationConnector Association="MilitaryRegistrationModel.FK_Learning_MethodLearning" />
+        <AssociationConnector Association="MilitaryRegistrationModel.FK_Learning_Recruit" />
+        <AssociationConnector Association="MilitaryRegistrationModel.FK_Learning_ResultLearning" />
+        <AssociationConnector Association="MilitaryRegistrationModel.FK_ConscriptionСommission_MedicalConclusion" />
+        <AssociationConnector Association="MilitaryRegistrationModel.FK_MedicalConclusion_Conscript" />
+        <AssociationConnector Association="MilitaryRegistrationModel.FK_ConscriptEducation_Conscript" />
+        <AssociationConnector Association="MilitaryRegistrationModel.FK_ConscriptionСommission_Conscript" />
+        <AssociationConnector Association="MilitaryRegistrationModel.FK_Summons_Conscript" />
+        <AssociationConnector Association="MilitaryRegistrationModel.FK_Summons_Voenkomat" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

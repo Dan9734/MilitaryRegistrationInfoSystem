@@ -1,0 +1,900 @@
+﻿<Window x:Class="MilitaryRegistrationInfoSystem.Windows.AddRecruitWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MilitaryRegistrationInfoSystem.Windows"
+        mc:Ignorable="d"
+        Title="Военнообязанный" Height="870" Width="765" WindowStartupLocation="CenterScreen" >
+    <Grid>
+        <!--Loaded="Window_Loaded"-->
+        <!--xmlns:my="clr-namespace:WpfApplication"-->
+        <DockPanel Name="dockPanel1">
+
+            <StackPanel DockPanel.Dock="Bottom">
+                <ToolBar Height="45">
+                    <Button Name="bOk" ToolTip="Сохранить" Click="bOk_Click">
+                        <Image Source="/Resources/check.png" />
+                    </Button>
+                    <Separator />
+                    <Button Name="bCancel" ToolTip="Отмена" Click="bCancel_Click">
+                        <Image Source="/Resources/cross.png"/>
+                    </Button>
+                </ToolBar>
+            </StackPanel>
+
+            <TabControl Name="mainTabControl">
+                <TabItem Header="Общие сведения" Name="recruitTabItem">
+
+                    <StackPanel>
+                        <Grid HorizontalAlignment="Stretch" Name="grid1" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Фамилия:" Width="250" 
+                                   Grid.Column="0" Grid.Row="0" 
+                                   HorizontalAlignment="Left" Margin="3" 
+                                   VerticalAlignment="Center" 
+                                   />
+                            <TextBox Grid.Column="1" Height="23" 
+                                     HorizontalAlignment="Left" Margin="3,3,0,3" 
+                                     x:Name="LNameTextBox" Text="{Binding Path=Фамилия, 
+                                     Mode=TwoWay, ValidatesOnExceptions=true, 
+                                     NotifyOnValidationError=true}" VerticalAlignment="Center" 
+                                     Width="450"
+                                     />
+                        </Grid>
+
+                        <Grid HorizontalAlignment="Stretch" Name="grid2" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Имя:"  Width="250" 
+                                   Grid.Column="0" Grid.Row="0" 
+                                   HorizontalAlignment="Left" Margin="3" 
+                                   VerticalAlignment="Center" 
+                                   />
+                            <TextBox Grid.Column="1" 
+                                     Grid.Row="0" Height="23" 
+                                     HorizontalAlignment="Left" Margin="3" 
+                                     x:Name="FNameTextBox" Text="{Binding Path=Имя, 
+                                     Mode=TwoWay, ValidatesOnExceptions=true, 
+                                     NotifyOnValidationError=true}" VerticalAlignment="Center" 
+                                     Width="450" 
+                                     />
+                        </Grid>
+
+                        <Grid HorizontalAlignment="Stretch" Name="grid3" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Отчество:" Width="250" 
+                                   Grid.Column="0" Grid.Row="0" 
+                                   HorizontalAlignment="Left" Margin="3" 
+                                   VerticalAlignment="Center" />
+                            <TextBox Grid.Column="1" Grid.Row="0" 
+                                     Height="23" HorizontalAlignment="Left" 
+                                     Margin="3" Name="MNameTextBox" 
+                                     Text="{Binding Path=Отчество, 
+                                     Mode=TwoWay, ValidatesOnExceptions=true, 
+                                     NotifyOnValidationError=true}" VerticalAlignment="Center" 
+                                     Width="450" 
+                                     />
+                        </Grid>
+
+                        <Grid HorizontalAlignment="Stretch" Name="grid4" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Дата рождения:" Width="250" 
+                                   Grid.Column="0" Grid.Row="0" 
+                                   HorizontalAlignment="Left" Margin="3" 
+                                   VerticalAlignment="Center" 
+                                   />
+                            <DatePicker Grid.Column="1" Grid.Row="0" 
+                                        Height="25" HorizontalAlignment="Left" 
+                                        Margin="3" x:Name="DateBirthDatePicker" 
+                                        SelectedDate="{Binding Path=Дата_рождения, 
+                                        Mode=TwoWay, ValidatesOnExceptions=true, 
+                                        NotifyOnValidationError=true}" VerticalAlignment="Center" 
+                                        Width="450" 
+                                        />
+                        </Grid>
+
+                        <Grid HorizontalAlignment="Stretch" Name="grid5" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Место работы:"  Width="250" 
+                                   Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" 
+                                   Margin="3" VerticalAlignment="Center" 
+                                   />
+                            <TextBox Grid.Column="1" Grid.Row="0" 
+                                     Height="23" HorizontalAlignment="Left" Margin="3" 
+                                     x:Name="WorkPlaceTextBox" 
+                                     Text="{Binding Path=Место_рождения, Mode=TwoWay, 
+                                     ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                     VerticalAlignment="Center" Width="450" 
+                                     />
+                        </Grid>
+                        <Grid  HorizontalAlignment="Stretch" Name="grid11" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Адрес регистрация:" Width="250" 
+                                   Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" 
+                                   Margin="3" VerticalAlignment="Center" 
+                                   />
+                            <TextBox Grid.Column="1" Grid.Row="0" Height="23" 
+                                     HorizontalAlignment="Left" Margin="3" 
+                                     x:Name="RegistrationAddressTextBox" 
+                                     Text="{Binding Path=Регистрация_Адрес, Mode=TwoWay, 
+                                     ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                     VerticalAlignment="Center" Width="450" 
+                                     />
+                        </Grid>
+                        <Grid HorizontalAlignment="Stretch" Name="grid12" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Адрес проживания:" Width="250" 
+                                   Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" 
+                                   Margin="3" VerticalAlignment="Center" 
+                                   />
+                            <TextBox Grid.Column="1" Grid.Row="0" 
+                                     Height="23" HorizontalAlignment="Left" 
+                                     Margin="3" x:Name="LivePlaceTextBox" 
+                                     Text="{Binding Path=Проживание_Адрес, Mode=TwoWay, 
+                                     ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                     VerticalAlignment="Center" Width="450"  
+                                     />
+                        </Grid>
+                        <Grid HorizontalAlignment="Stretch" Name="grid13" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Номер телефон:" Width="250" 
+                                   Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" 
+                                   Margin="3" VerticalAlignment="Center" 
+                                   />
+                            <TextBox Grid.Column="1" Grid.Row="0" 
+                                     Height="23" HorizontalAlignment="Left" 
+                                     Margin="3" x:Name="PhoneTextBox" 
+                                     TextChanged="PhoneTextBox_TextChanged"
+                                     Text="{Binding Path=Телефон, Mode=TwoWay, 
+                                     ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                     VerticalAlignment="Center" Width="450"  
+                                     />
+                        </Grid>
+
+                    </StackPanel>
+
+                </TabItem>
+                <TabItem Header="Паспорт" Name="passportTabItem">
+                    <StackPanel>
+
+                        <Grid HorizontalAlignment="Stretch" Name="grid7" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Серия:" Width="250" Grid.Column="0" 
+                                   Grid.Row="0" HorizontalAlignment="Left"
+                                   Margin="3" VerticalAlignment="Center" 
+                                   />
+                            <TextBox Grid.Column="1" Grid.Row="0" Height="23" 
+                                     HorizontalAlignment="Left" Margin="3" 
+                                     TextChanged="SPassTextBox_TextChanged"
+                                     x:Name="SPassTextBox" Text="{Binding Path=Паспорт_Серия, 
+                                     Mode=TwoWay, ValidatesOnExceptions=true, 
+                                     NotifyOnValidationError=true}" 
+                                     VerticalAlignment="Center" Width="450" 
+                                     />
+                        </Grid>
+
+                        <Grid HorizontalAlignment="Stretch" Name="grid8" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Номер:" Width="250" 
+                                   Grid.Column="0" Grid.Row="0" 
+                                   HorizontalAlignment="Left" Margin="3" 
+                                   VerticalAlignment="Center" 
+                                   />
+                            <TextBox Grid.Column="1" Grid.Row="0" 
+                                     Height="23" HorizontalAlignment="Left" 
+                                     Margin="3" x:Name="NPassTextBox" 
+                                     TextChanged="NPassTextBox_TextChanged"
+                                     Text="{Binding Path=Паспорт_Номер, Mode=TwoWay, 
+                                     ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                     VerticalAlignment="Center" Width="450" 
+                                     />
+                        </Grid>
+
+                        <Grid HorizontalAlignment="Stretch" Name="grid9" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Дата выдачи:" Width="250" 
+                                   Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" 
+                                   Margin="3" VerticalAlignment="Center" 
+                                   />
+                            <!--<TextBox Grid.Column="1" Grid.Row="0" 
+                                     Height="23" HorizontalAlignment="Left" 
+                                     Margin="3" Name="DateIssuePassportTextBox" 
+                                     TextChanged="DateIssueTextBox_TextChanged"
+                                     Text="{Binding Path=Паспорт_Номер, Mode=TwoWay, 
+                                     ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                     VerticalAlignment="Center" Width="450" 
+                                     />-->
+                            <DatePicker Grid.Column="1" Grid.Row="0" 
+                                        Height="25" HorizontalAlignment="Left" 
+                                        Margin="3" x:Name="DateIssuePassportDatePicker" 
+                                        SelectedDate="{Binding Path=Паспорт_Дата_выдачи, 
+                                        Mode=TwoWay, ValidatesOnExceptions=true, 
+                                        NotifyOnValidationError=true}" VerticalAlignment="Center" 
+                                        Width="450" 
+                                        />
+                        </Grid>
+
+                        <Grid HorizontalAlignment="Stretch" Name="grid10" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Кем выдан:" Width="250" 
+                                   Grid.Column="0" Grid.Row="0" 
+                                   HorizontalAlignment="Left" Margin="3" 
+                                   VerticalAlignment="Center" 
+                                   />
+                            <TextBox Grid.Column="1" Grid.Row="0" 
+                                     Height="23" HorizontalAlignment="Left" Margin="3"
+                                     x:Name="PassportIssuedTextBox" Text="{Binding Path=Паспорт_Выдан, 
+                                     Mode=TwoWay, ValidatesOnExceptions=true, 
+                                     NotifyOnValidationError=true}" VerticalAlignment="Center" 
+                                     Width="450" TextChanged="PassportIssuedTextBox_TextChanged" 
+                                     />
+                        </Grid>
+
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Приказ" Name="orderTabItem">
+                    <StackPanel>
+                        <Grid HorizontalAlignment="Stretch" Name="grid14" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7" />
+                                <ColumnDefinition Width="25"/>
+                                <ColumnDefinition Width="224"/>
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Включен в список:" 
+                                   Width="250" Grid.Column="0" HorizontalAlignment="Left" 
+                                   Margin="3,0,0,0" VerticalAlignment="Center" 
+                                   Grid.ColumnSpan="3" 
+                                   />
+                            <CheckBox Content="" Grid.Column="3" 
+                                      Height="16" HorizontalAlignment="Center" 
+                                      IsChecked="{Binding Path=Включен_в_список, 
+                                      Mode=TwoWay, ValidatesOnExceptions=true, 
+                                      NotifyOnValidationError=true}" Name="включен_в_списокCheckBox" 
+                                      VerticalAlignment="Center" 
+                                      />
+                        </Grid>
+
+                        <Grid HorizontalAlignment="Stretch" Name="grid15" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Общий результат:" Width="250" 
+                                   Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" 
+                                   Margin="3" VerticalAlignment="Center" 
+                                   />
+                            <TextBox Grid.Column="1" Grid.Row="0" 
+                                     Height="23" HorizontalAlignment="Left" 
+                                     Margin="3" Name="общий_результатTextBox" 
+                                     Text="{Binding Path=Общий_результат, Mode=TwoWay, 
+                                     ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                     VerticalAlignment="Center" Width="450" 
+                                     />
+                        </Grid>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Изучения" Name="eduTabItem">
+                    <DockPanel>
+                        <StackPanel DockPanel.Dock="Bottom">
+                            <ToolBar Height="45" VerticalAlignment="Top">
+                                <Button Name="tsbEduDelete" ToolTip="Удалить" Click="tsbEduDelete_Click">
+                                    <Image Source="/Resources/database_delete_7487.png"/>
+                                </Button>
+                            </ToolBar>
+                        </StackPanel>
+                        <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Name="изучениеDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn x:Name="кодColumn" Binding="{Binding Path=Код}" Header="Код" Width="SizeToHeader" Visibility="Hidden"/>
+                                <DataGridTextColumn x:Name="код_ПризывникColumn" Binding="{Binding Path=Код_Призывник}" Header="Код Призывник" Width="SizeToHeader" Visibility="Hidden"/>
+                                <DataGridTemplateColumn x:Name="датаColumn" Header="Дата" Width="200">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <DatePicker SelectedDate="{Binding Path=Дата, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridComboBoxColumn x:Name="код_Метод_изученияColumn" Header="Метод изучения" Width="*"
+                                     SelectedValueBinding="{Binding Path=Код_Метод_изучения, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}"
+                                     DisplayMemberPath="Название" SelectedValuePath="Код"/>
+
+                                <DataGridComboBoxColumn x:Name="код_Результат_изученияColumn" Header="Результат изучения" Width="*"
+                                     SelectedValueBinding="{Binding Path=Код_Результат_изучения, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}"
+                                     DisplayMemberPath="Название" SelectedValuePath="Код"/>
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </DockPanel>
+                </TabItem>
+
+
+                <TabItem Header="Анкета" Name="questTabItem">
+                    <ScrollViewer>
+                        <StackPanel>
+                            <Grid HorizontalAlignment="Stretch" Name="grid16" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Предпочитаемые дисциплины:" Width="250" 
+                                       Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" 
+                                       Margin="3" VerticalAlignment="Center" 
+                                       />
+                                <ComboBox Text="{Binding Path=Предпочитаемые_дисциплины, 
+                                    Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                          Grid.Column="1" Grid.Row="0" Height="23" 
+                                          HorizontalAlignment="Left" Margin="3" 
+                                          Name="предпочитаемые_дисциплиныComboBox" VerticalAlignment="Center" 
+                                          Width="450" IsEditable="True"
+                                          />
+                            </Grid>
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Успешность:" Width="250" Grid.Column="0" 
+                                       Grid.Row="0" HorizontalAlignment="Left" Margin="3" 
+                                       VerticalAlignment="Center" 
+                                       />
+                                <ComboBox Name="успешностьComboBox" Text="{Binding Path=Успешность, 
+                                          Mode=TwoWay, ValidatesOnExceptions=true, 
+                                          NotifyOnValidationError=true}" Grid.Column="1" 
+                                          Grid.Row="0" Height="23" HorizontalAlignment="Left" 
+                                          Margin="3"  VerticalAlignment="Center" 
+                                          Width="450" IsEditable="True"
+                                          />
+                            </Grid>
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Пройденные курсы:" Width="250" 
+                                       Grid.Column="0" Grid.Row="0" 
+                                       HorizontalAlignment="Left" Margin="3" 
+                                       VerticalAlignment="Center" 
+                                       />
+                                <ComboBox Name="пройденные_курсыComboBox" 
+                                          Text="{Binding Path=Пройденные_курсы, 
+                                          Mode=TwoWay, ValidatesOnExceptions=true, 
+                                          NotifyOnValidationError=true}" Grid.Column="1" 
+                                          Grid.Row="0" Height="23" HorizontalAlignment="Left" 
+                                          Margin="3"  VerticalAlignment="Center" 
+                                          Width="450" IsEditable="True"
+                                          />
+                            </Grid>
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Занятия спортом:" Width="250" 
+                                       Grid.Column="0" Grid.Row="0" 
+                                       HorizontalAlignment="Left" Margin="3" 
+                                       VerticalAlignment="Center" />
+                                <ComboBox Name="занятия_спортомComboBox" 
+                                          Text="{Binding Path=Занятия_спортом, 
+                                          Mode=TwoWay, ValidatesOnExceptions=true, 
+                                          NotifyOnValidationError=true}" Grid.Column="1" 
+                                          Grid.Row="0" Height="23" HorizontalAlignment="Left" 
+                                          Margin="3"  VerticalAlignment="Center" 
+                                          Width="450" IsEditable="True"
+                                          />
+                            </Grid>
+
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Участие в конкурсах:" Width="250" 
+                                       Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" 
+                                       Margin="3" VerticalAlignment="Center" 
+                                       />
+                                <TextBox  Name="участие_в_конкурсахTextBox" 
+                                          Text="{Binding Path=Участие_в_конкурсах, 
+                                          Mode=TwoWay, ValidatesOnExceptions=true, 
+                                          NotifyOnValidationError=true}" VerticalAlignment="Center" 
+                                          Width="450" Grid.Column="1" Grid.Row="0" 
+                                          Height="23" HorizontalAlignment="Left" Margin="3" 
+                                          />
+                            </Grid>
+
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Виды задачи:" Width="250" 
+                                       Grid.Column="0" Grid.Row="0" 
+                                       HorizontalAlignment="Left" Margin="3" 
+                                       VerticalAlignment="Center" 
+                                       />
+                                <ComboBox Name="виды_задачComboBox" 
+                                          Text="{Binding Path=Виды_задач, 
+                                          Mode=TwoWay, ValidatesOnExceptions=true, 
+                                          NotifyOnValidationError=true}" Grid.Column="1" 
+                                          Grid.Row="0" Height="23" HorizontalAlignment="Left" 
+                                          Margin="3"  VerticalAlignment="Center" 
+                                          Width="450" IsEditable="True"
+                                          />
+                            </Grid>
+
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Отношение:" Width="250" 
+                                       Grid.Column="0" Grid.Row="0" 
+                                       HorizontalAlignment="Left" Margin="3" 
+                                       VerticalAlignment="Center" 
+                                       />
+                                <ComboBox Name="виды_задач_ОтношениеComboBox" 
+                                          Text="{Binding Path=Виды_задач_Отношение, 
+                                          Mode=TwoWay, ValidatesOnExceptions=true, 
+                                          NotifyOnValidationError=true}" Grid.Column="1" 
+                                          Grid.Row="0" Height="23" HorizontalAlignment="Left" 
+                                          Margin="3"  VerticalAlignment="Center" 
+                                          Width="450" IsEditable="True"
+                                          />
+                            </Grid>
+
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Инициативность:" Width="250" 
+                                       Grid.Column="0" Grid.Row="0" 
+                                       HorizontalAlignment="Left" Margin="3" 
+                                       VerticalAlignment="Center" 
+                                       />
+                                <ComboBox Name="виды_задач_ИнициативностьComboBox" 
+                                          Text="{Binding Path=Виды_задач_Инициативность, 
+                                          Mode=TwoWay, ValidatesOnExceptions=true, 
+                                          NotifyOnValidationError=true}" Grid.Column="1" 
+                                          Grid.Row="0" Height="23" HorizontalAlignment="Left" 
+                                          Margin="3"  VerticalAlignment="Center" 
+                                          Width="450" IsEditable="True"
+                                          />
+                            </Grid>
+
+                            <Grid HorizontalAlignment="Stretch" Name="grid17" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Частые болезни:" Width="250" 
+                                       Grid.Column="0" Grid.Row="0" 
+                                       HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" 
+                                       />
+                                <CheckBox Content="" Grid.Column="1" 
+                                          Grid.Row="0" Height="16" 
+                                          HorizontalAlignment="Left" 
+                                          IsChecked="{Binding Path=Частые_болезни, 
+                                          Mode=TwoWay, ValidatesOnExceptions=true, 
+                                          NotifyOnValidationError=true}" Margin="3" 
+                                          Name="частые_болезниCheckBox" VerticalAlignment="Center" 
+                                          />
+                            </Grid>
+                            <Grid HorizontalAlignment="Stretch" Name="grid18" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Отличается поведением от большинства:" 
+                                       Width="250" Grid.Column="0" Grid.Row="0" 
+                                       HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" 
+                                       />
+                                <CheckBox Content="" Grid.Column="1" Grid.Row="0" Height="16" 
+                                          HorizontalAlignment="Left" 
+                                          IsChecked="{Binding Path=Отличия_Отличается_поведением, 
+                                          Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                          Margin="3" Name="отличия_Отличается_поведениемCheckBox" 
+                                          VerticalAlignment="Center" />
+                            </Grid>
+
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Отношением к занятиям:" Width="250" 
+                                       Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" 
+                                       Margin="3" VerticalAlignment="Center" 
+                                       />
+                                <ComboBox Name="отличия_Отношения_к_занятиямComboBox" 
+                                          Text="{Binding Path=Отличия_Отношения_к_занятиям, 
+                                    Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                          Grid.Column="1" Grid.Row="0" Height="23" HorizontalAlignment="Left" 
+                                          Margin="3"  VerticalAlignment="Center" Width="450" IsEditable="True"
+                                          />
+                            </Grid>
+
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Отношением к дисциплине:" Width="250" 
+                                       Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" 
+                                       Margin="3" VerticalAlignment="Center" 
+                                       />
+                                <ComboBox Name="отличия_Отношения_к_дисциплинеComboBox" 
+                                          Text="{Binding Path=Отличия_Отношения_к_дисциплине, 
+                                          Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                          Grid.Column="1" Grid.Row="0" Height="23" 
+                                          HorizontalAlignment="Left" Margin="3"  
+                                          VerticalAlignment="Center" Width="450" IsEditable="True"
+                                          />
+                            </Grid>
+
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Поведением в коллективе:" Width="250" 
+                                       Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" 
+                                       Margin="3" VerticalAlignment="Center" 
+                                       />
+                                <ComboBox Name="отличия_Поведение_в_коллективеComboBox" 
+                                          Text="{Binding Path=Отличия_Поведение_в_коллективе, 
+                                          Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                          Grid.Column="1" Grid.Row="0" Height="23" HorizontalAlignment="Left" 
+                                          Margin="3"  VerticalAlignment="Center" Width="450" IsEditable="True"
+                                          />
+                            </Grid>
+
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Другие отличия:" Width="250" 
+                                       Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" 
+                                       Margin="3" VerticalAlignment="Center" 
+                                       />
+                                <TextBox  Name="отличия_ДругоеTextBox" Text="{Binding Path=Отличия_Другое, 
+                                          Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                          VerticalAlignment="Center" Width="450" Grid.Column="1" Grid.Row="0" 
+                                          Height="23" HorizontalAlignment="Left" Margin="3" 
+                                          />
+                            </Grid>
+
+
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Участие в жизни коллектива:" Width="250" 
+                                       Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" 
+                                       Margin="3" VerticalAlignment="Center" 
+                                       />
+                                <ComboBox IsEditable="True"  Name="участие_в_жизни_коллективаComboBox" 
+                                          Text="{Binding Path=Участие_в_жизни_коллектива, 
+                                    Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                          VerticalAlignment="Center" Width="450" Grid.Column="1" 
+                                          Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="3" 
+                                          />
+                            </Grid>
+
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Место в коллективе:" Width="250" 
+                                       Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" 
+                                       Margin="3" VerticalAlignment="Center" 
+                                       />
+                                <ComboBox IsEditable="True"  Name="место_в_коллективеComboBox" 
+                                          Text="{Binding Path=Место_в_коллективе, Mode=TwoWay, 
+                                          ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                          VerticalAlignment="Center" Width="450" Grid.Column="1"
+                                          Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="3" 
+                                          />
+                            </Grid>
+
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Навыки и способности:" 
+                                       Width="250" Grid.Column="0" Grid.Row="0" 
+                                       HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" 
+                                       />
+                                <ComboBox IsEditable="True"  Name="навыки_и_способностиComboBox" 
+                                          Text="{Binding Path=Навыки_и_способности, Mode=TwoWay, 
+                                          ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                          VerticalAlignment="Center" Width="450" Grid.Column="1" 
+                                          Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="3" 
+                                          />
+                            </Grid>
+
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Реакция на критику:" Width="250" 
+                                       Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" 
+                                       Margin="3" VerticalAlignment="Center" 
+                                       />
+                                <ComboBox IsEditable="True"  Name="реакция_на_критикуComboBox" 
+                                          Text="{Binding Path=Реакция_на_критику, Mode=TwoWay, 
+                                          ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                          VerticalAlignment="Center" Width="450" Grid.Column="1" 
+                                          Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="3" 
+                                          />
+                            </Grid>
+
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Эмоциональные проявления:" Width="250" 
+                                       Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" 
+                                       Margin="3" VerticalAlignment="Center" 
+                                       />
+                                <ComboBox  Name="реакция_на_критику_ЭмоцииComboBox" 
+                                           Text="{Binding Path=Реакция_на_критику_Эмоции, 
+                                    Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                           VerticalAlignment="Center" Width="450" Grid.Column="1" 
+                                           Grid.Row="0" Height="23" HorizontalAlignment="Left" 
+                                           Margin="3" IsEditable="True" 
+                                           />
+                            </Grid>
+
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Характерные черты личности:" Width="250" 
+                                       Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" 
+                                       Margin="3" VerticalAlignment="Center" 
+                                       />
+                                <TextBox  Name="характерные_черты_личностиTextBox" 
+                                          Text="{Binding Path=Характерные_черты_личности, 
+                                          Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                          VerticalAlignment="Center" Width="450" Grid.Column="1" 
+                                          Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="3" 
+                                          />
+                            </Grid>
+
+
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Отношение к алкоголю:" Width="250" 
+                                       Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" 
+                                       Margin="3" VerticalAlignment="Center" 
+                                       />
+                                <ComboBox  Name="отношение_к_алкоголюComboBox" 
+                                           Text="{Binding Path=Отношение_к_алкоголю, Mode=TwoWay, 
+                                           ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                           VerticalAlignment="Center" Width="450" Grid.Column="1" 
+                                           Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="3" 
+                                           IsEditable="True" 
+                                           />
+                            </Grid>
+
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Отношение к наркотикам:" Width="250" 
+                                       Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" 
+                                       Margin="3" VerticalAlignment="Center" 
+                                       />
+                                <ComboBox  Name="отношение_к_наркотикамComboBox" 
+                                           Text="{Binding Path=Отношение_к_наркотикам, 
+                                           Mode=TwoWay, ValidatesOnExceptions=true, 
+                                           NotifyOnValidationError=true}" VerticalAlignment="Center" 
+                                           Width="450" Grid.Column="1" Grid.Row="0" Height="23" 
+                                           HorizontalAlignment="Left" Margin="3" IsEditable="True" 
+                                           />
+                            </Grid>
+
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Склонность к проф.деятельности:" 
+                                       Width="250" Grid.Column="0" Grid.Row="0" 
+                                       HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" 
+                                       />
+                                <TextBox  Name="склонность_к_проф_деятельностиTextBox" 
+                                          Text="{Binding Path=Склонность_к_проф_деятельности, 
+                                          Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                          VerticalAlignment="Center" Width="450" Grid.Column="1" Grid.Row="0" 
+                                          Height="23" HorizontalAlignment="Left" Margin="3" 
+                                          />
+                            </Grid>
+
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Подготовка к военной службе:" Width="250" Grid.Column="0" 
+                                       Grid.Row="0" HorizontalAlignment="Left" Margin="3" 
+                                       VerticalAlignment="Center" 
+                                       />
+                                <TextBox  Name="Подготовка_к_военной_службеTextBox" 
+                                          Text="{Binding Path=Подготовка_к_военной_службе, 
+                                          Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                          VerticalAlignment="Center" Width="450" Grid.Column="1" 
+                                          Grid.Row="0" Height="23" HorizontalAlignment="Left" 
+                                          Margin="3" 
+                                          />
+                            </Grid>
+
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+            </TabControl>
+        </DockPanel>
+    </Grid>
+</Window>
