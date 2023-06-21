@@ -42,9 +42,8 @@
                                    />
                             <TextBox Grid.Column="1" Height="23" 
                                      HorizontalAlignment="Left" Margin="3,3,0,3" 
-                                     x:Name="LNameTextBox" Text="{Binding Path=Фамилия, 
-                                     Mode=TwoWay, ValidatesOnExceptions=true, 
-                                     NotifyOnValidationError=true}" VerticalAlignment="Center" 
+                                     x:Name="LNameTextBox" 
+                                     VerticalAlignment="Center" 
                                      Width="450"
                                      />
                         </Grid>
@@ -65,9 +64,8 @@
                             <TextBox Grid.Column="1" 
                                      Grid.Row="0" Height="23" 
                                      HorizontalAlignment="Left" Margin="3" 
-                                     x:Name="FNameTextBox" Text="{Binding Path=Имя, 
-                                     Mode=TwoWay, ValidatesOnExceptions=true, 
-                                     NotifyOnValidationError=true}" VerticalAlignment="Center" 
+                                     x:Name="FNameTextBox"
+                                     VerticalAlignment="Center" 
                                      Width="450" 
                                      />
                         </Grid>
@@ -87,9 +85,7 @@
                             <TextBox Grid.Column="1" Grid.Row="0" 
                                      Height="23" HorizontalAlignment="Left" 
                                      Margin="3" Name="MNameTextBox" 
-                                     Text="{Binding Path=Отчество, 
-                                     Mode=TwoWay, ValidatesOnExceptions=true, 
-                                     NotifyOnValidationError=true}" VerticalAlignment="Center" 
+                                     VerticalAlignment="Center" 
                                      Width="450" 
                                      />
                         </Grid>
@@ -110,9 +106,7 @@
                             <DatePicker Grid.Column="1" Grid.Row="0" 
                                         Height="25" HorizontalAlignment="Left" 
                                         Margin="3" x:Name="DateBirthDatePicker" 
-                                        SelectedDate="{Binding Path=Дата_рождения, 
-                                        Mode=TwoWay, ValidatesOnExceptions=true, 
-                                        NotifyOnValidationError=true}" VerticalAlignment="Center" 
+                                        VerticalAlignment="Center" 
                                         Width="450" 
                                         />
                         </Grid>
@@ -132,8 +126,6 @@
                             <TextBox Grid.Column="1" Grid.Row="0" 
                                      Height="23" HorizontalAlignment="Left" Margin="3" 
                                      x:Name="WorkPlaceTextBox" 
-                                     Text="{Binding Path=Место_рождения, Mode=TwoWay, 
-                                     ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
                                      VerticalAlignment="Center" Width="450" 
                                      />
                         </Grid>
@@ -152,9 +144,7 @@
                             <TextBox Grid.Column="1" Grid.Row="0" Height="23" 
                                      HorizontalAlignment="Left" Margin="3" 
                                      x:Name="RegistrationAddressTextBox" 
-                                     Text="{Binding Path=Регистрация_Адрес, Mode=TwoWay, 
-                                     ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
-                                     VerticalAlignment="Center" Width="450" 
+                                    VerticalAlignment="Center" Width="450" 
                                      />
                         </Grid>
                         <Grid HorizontalAlignment="Stretch" Name="grid12" VerticalAlignment="Top">
@@ -172,9 +162,7 @@
                             <TextBox Grid.Column="1" Grid.Row="0" 
                                      Height="23" HorizontalAlignment="Left" 
                                      Margin="3" x:Name="LivePlaceTextBox" 
-                                     Text="{Binding Path=Проживание_Адрес, Mode=TwoWay, 
-                                     ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
-                                     VerticalAlignment="Center" Width="450"  
+                                    VerticalAlignment="Center" Width="450"  
                                      />
                         </Grid>
                         <Grid HorizontalAlignment="Stretch" Name="grid13" VerticalAlignment="Top">
@@ -193,8 +181,6 @@
                                      Height="23" HorizontalAlignment="Left" 
                                      Margin="3" x:Name="PhoneTextBox" 
                                      TextChanged="PhoneTextBox_TextChanged"
-                                     Text="{Binding Path=Телефон, Mode=TwoWay, 
-                                     ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
                                      VerticalAlignment="Center" Width="450"  
                                      />
                         </Grid>
@@ -220,9 +206,7 @@
                             <TextBox Grid.Column="1" Grid.Row="0" Height="23" 
                                      HorizontalAlignment="Left" Margin="3" 
                                      TextChanged="SPassTextBox_TextChanged"
-                                     x:Name="SPassTextBox" Text="{Binding Path=Паспорт_Серия, 
-                                     Mode=TwoWay, ValidatesOnExceptions=true, 
-                                     NotifyOnValidationError=true}" 
+                                     x:Name="SPassTextBox" 
                                      VerticalAlignment="Center" Width="450" 
                                      />
                         </Grid>
@@ -244,8 +228,6 @@
                                      Height="23" HorizontalAlignment="Left" 
                                      Margin="3" x:Name="NPassTextBox" 
                                      TextChanged="NPassTextBox_TextChanged"
-                                     Text="{Binding Path=Паспорт_Номер, Mode=TwoWay, 
-                                     ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
                                      VerticalAlignment="Center" Width="450" 
                                      />
                         </Grid>
@@ -272,10 +254,8 @@
                                      />-->
                             <DatePicker Grid.Column="1" Grid.Row="0" 
                                         Height="25" HorizontalAlignment="Left" 
-                                        Margin="3" x:Name="DateIssuePassportDatePicker" 
-                                        SelectedDate="{Binding Path=Паспорт_Дата_выдачи, 
-                                        Mode=TwoWay, ValidatesOnExceptions=true, 
-                                        NotifyOnValidationError=true}" VerticalAlignment="Center" 
+                                        Margin="3" x:Name="DateIssuePassportDatePicker"
+                                        VerticalAlignment="Center" 
                                         Width="450" 
                                         />
                         </Grid>
@@ -295,9 +275,8 @@
                                    />
                             <TextBox Grid.Column="1" Grid.Row="0" 
                                      Height="23" HorizontalAlignment="Left" Margin="3"
-                                     x:Name="PassportIssuedTextBox" Text="{Binding Path=Паспорт_Выдан, 
-                                     Mode=TwoWay, ValidatesOnExceptions=true, 
-                                     NotifyOnValidationError=true}" VerticalAlignment="Center" 
+                                     x:Name="PassportIssuedTextBox"
+                                     VerticalAlignment="Center" 
                                      Width="450" TextChanged="PassportIssuedTextBox_TextChanged" 
                                      />
                         </Grid>
@@ -323,9 +302,7 @@
                                    />
                             <CheckBox Content="" Grid.Column="3" 
                                       Height="16" HorizontalAlignment="Center" 
-                                      IsChecked="{Binding Path=Включен_в_список, 
-                                      Mode=TwoWay, ValidatesOnExceptions=true, 
-                                      NotifyOnValidationError=true}" Name="включен_в_списокCheckBox" 
+                                      Name="включен_в_списокCheckBox" 
                                       VerticalAlignment="Center" 
                                       />
                         </Grid>
@@ -345,8 +322,6 @@
                             <TextBox Grid.Column="1" Grid.Row="0" 
                                      Height="23" HorizontalAlignment="Left" 
                                      Margin="3" Name="общий_результатTextBox" 
-                                     Text="{Binding Path=Общий_результат, Mode=TwoWay, 
-                                     ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
                                      VerticalAlignment="Center" Width="450" 
                                      />
                         </Grid>
@@ -402,8 +377,7 @@
                                        Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" 
                                        Margin="3" VerticalAlignment="Center" 
                                        />
-                                <ComboBox Text="{Binding Path=Предпочитаемые_дисциплины, 
-                                    Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                <ComboBox 
                                           Grid.Column="1" Grid.Row="0" Height="23" 
                                           HorizontalAlignment="Left" Margin="3" 
                                           Name="предпочитаемые_дисциплиныComboBox" VerticalAlignment="Center" 
@@ -422,9 +396,7 @@
                                        Grid.Row="0" HorizontalAlignment="Left" Margin="3" 
                                        VerticalAlignment="Center" 
                                        />
-                                <ComboBox Name="успешностьComboBox" Text="{Binding Path=Успешность, 
-                                          Mode=TwoWay, ValidatesOnExceptions=true, 
-                                          NotifyOnValidationError=true}" Grid.Column="1" 
+                                <ComboBox Name="успешностьComboBox"  Grid.Column="1" 
                                           Grid.Row="0" Height="23" HorizontalAlignment="Left" 
                                           Margin="3"  VerticalAlignment="Center" 
                                           Width="450" IsEditable="True"
@@ -443,10 +415,7 @@
                                        HorizontalAlignment="Left" Margin="3" 
                                        VerticalAlignment="Center" 
                                        />
-                                <ComboBox Name="пройденные_курсыComboBox" 
-                                          Text="{Binding Path=Пройденные_курсы, 
-                                          Mode=TwoWay, ValidatesOnExceptions=true, 
-                                          NotifyOnValidationError=true}" Grid.Column="1" 
+                                <ComboBox Name="пройденные_курсыComboBox"  Grid.Column="1" 
                                           Grid.Row="0" Height="23" HorizontalAlignment="Left" 
                                           Margin="3"  VerticalAlignment="Center" 
                                           Width="450" IsEditable="True"
@@ -464,10 +433,7 @@
                                        Grid.Column="0" Grid.Row="0" 
                                        HorizontalAlignment="Left" Margin="3" 
                                        VerticalAlignment="Center" />
-                                <ComboBox Name="занятия_спортомComboBox" 
-                                          Text="{Binding Path=Занятия_спортом, 
-                                          Mode=TwoWay, ValidatesOnExceptions=true, 
-                                          NotifyOnValidationError=true}" Grid.Column="1" 
+                                <ComboBox Name="занятия_спортомComboBox"  Grid.Column="1" 
                                           Grid.Row="0" Height="23" HorizontalAlignment="Left" 
                                           Margin="3"  VerticalAlignment="Center" 
                                           Width="450" IsEditable="True"
@@ -486,10 +452,7 @@
                                        Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" 
                                        Margin="3" VerticalAlignment="Center" 
                                        />
-                                <TextBox  Name="участие_в_конкурсахTextBox" 
-                                          Text="{Binding Path=Участие_в_конкурсах, 
-                                          Mode=TwoWay, ValidatesOnExceptions=true, 
-                                          NotifyOnValidationError=true}" VerticalAlignment="Center" 
+                                <TextBox  Name="участие_в_конкурсахTextBox" VerticalAlignment="Center" 
                                           Width="450" Grid.Column="1" Grid.Row="0" 
                                           Height="23" HorizontalAlignment="Left" Margin="3" 
                                           />
@@ -508,10 +471,7 @@
                                        HorizontalAlignment="Left" Margin="3" 
                                        VerticalAlignment="Center" 
                                        />
-                                <ComboBox Name="виды_задачComboBox" 
-                                          Text="{Binding Path=Виды_задач, 
-                                          Mode=TwoWay, ValidatesOnExceptions=true, 
-                                          NotifyOnValidationError=true}" Grid.Column="1" 
+                                <ComboBox Name="виды_задачComboBox"  Grid.Column="1" 
                                           Grid.Row="0" Height="23" HorizontalAlignment="Left" 
                                           Margin="3"  VerticalAlignment="Center" 
                                           Width="450" IsEditable="True"
@@ -531,10 +491,7 @@
                                        HorizontalAlignment="Left" Margin="3" 
                                        VerticalAlignment="Center" 
                                        />
-                                <ComboBox Name="виды_задач_ОтношениеComboBox" 
-                                          Text="{Binding Path=Виды_задач_Отношение, 
-                                          Mode=TwoWay, ValidatesOnExceptions=true, 
-                                          NotifyOnValidationError=true}" Grid.Column="1" 
+                                <ComboBox Name="виды_задач_ОтношениеComboBox" Grid.Column="1" 
                                           Grid.Row="0" Height="23" HorizontalAlignment="Left" 
                                           Margin="3"  VerticalAlignment="Center" 
                                           Width="450" IsEditable="True"
@@ -554,10 +511,7 @@
                                        HorizontalAlignment="Left" Margin="3" 
                                        VerticalAlignment="Center" 
                                        />
-                                <ComboBox Name="виды_задач_ИнициативностьComboBox" 
-                                          Text="{Binding Path=Виды_задач_Инициативность, 
-                                          Mode=TwoWay, ValidatesOnExceptions=true, 
-                                          NotifyOnValidationError=true}" Grid.Column="1" 
+                                <ComboBox Name="виды_задач_ИнициативностьComboBox"  Grid.Column="1" 
                                           Grid.Row="0" Height="23" HorizontalAlignment="Left" 
                                           Margin="3"  VerticalAlignment="Center" 
                                           Width="450" IsEditable="True"
@@ -578,10 +532,7 @@
                                        />
                                 <CheckBox Content="" Grid.Column="1" 
                                           Grid.Row="0" Height="16" 
-                                          HorizontalAlignment="Left" 
-                                          IsChecked="{Binding Path=Частые_болезни, 
-                                          Mode=TwoWay, ValidatesOnExceptions=true, 
-                                          NotifyOnValidationError=true}" Margin="3" 
+                                          HorizontalAlignment="Left"  Margin="3" 
                                           Name="частые_болезниCheckBox" VerticalAlignment="Center" 
                                           />
                             </Grid>
@@ -599,8 +550,6 @@
                                        />
                                 <CheckBox Content="" Grid.Column="1" Grid.Row="0" Height="16" 
                                           HorizontalAlignment="Left" 
-                                          IsChecked="{Binding Path=Отличия_Отличается_поведением, 
-                                          Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
                                           Margin="3" Name="отличия_Отличается_поведениемCheckBox" 
                                           VerticalAlignment="Center" />
                             </Grid>
@@ -618,8 +567,6 @@
                                        Margin="3" VerticalAlignment="Center" 
                                        />
                                 <ComboBox Name="отличия_Отношения_к_занятиямComboBox" 
-                                          Text="{Binding Path=Отличия_Отношения_к_занятиям, 
-                                    Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
                                           Grid.Column="1" Grid.Row="0" Height="23" HorizontalAlignment="Left" 
                                           Margin="3"  VerticalAlignment="Center" Width="450" IsEditable="True"
                                           />
@@ -638,8 +585,6 @@
                                        Margin="3" VerticalAlignment="Center" 
                                        />
                                 <ComboBox Name="отличия_Отношения_к_дисциплинеComboBox" 
-                                          Text="{Binding Path=Отличия_Отношения_к_дисциплине, 
-                                          Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
                                           Grid.Column="1" Grid.Row="0" Height="23" 
                                           HorizontalAlignment="Left" Margin="3"  
                                           VerticalAlignment="Center" Width="450" IsEditable="True"
@@ -659,8 +604,6 @@
                                        Margin="3" VerticalAlignment="Center" 
                                        />
                                 <ComboBox Name="отличия_Поведение_в_коллективеComboBox" 
-                                          Text="{Binding Path=Отличия_Поведение_в_коллективе, 
-                                          Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
                                           Grid.Column="1" Grid.Row="0" Height="23" HorizontalAlignment="Left" 
                                           Margin="3"  VerticalAlignment="Center" Width="450" IsEditable="True"
                                           />
@@ -678,8 +621,7 @@
                                        Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" 
                                        Margin="3" VerticalAlignment="Center" 
                                        />
-                                <TextBox  Name="отличия_ДругоеTextBox" Text="{Binding Path=Отличия_Другое, 
-                                          Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                <TextBox  Name="отличия_ДругоеTextBox" 
                                           VerticalAlignment="Center" Width="450" Grid.Column="1" Grid.Row="0" 
                                           Height="23" HorizontalAlignment="Left" Margin="3" 
                                           />
@@ -699,8 +641,6 @@
                                        Margin="3" VerticalAlignment="Center" 
                                        />
                                 <ComboBox IsEditable="True"  Name="участие_в_жизни_коллективаComboBox" 
-                                          Text="{Binding Path=Участие_в_жизни_коллектива, 
-                                    Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
                                           VerticalAlignment="Center" Width="450" Grid.Column="1" 
                                           Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="3" 
                                           />
@@ -719,8 +659,6 @@
                                        Margin="3" VerticalAlignment="Center" 
                                        />
                                 <ComboBox IsEditable="True"  Name="место_в_коллективеComboBox" 
-                                          Text="{Binding Path=Место_в_коллективе, Mode=TwoWay, 
-                                          ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
                                           VerticalAlignment="Center" Width="450" Grid.Column="1"
                                           Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="3" 
                                           />
@@ -739,8 +677,6 @@
                                        HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" 
                                        />
                                 <ComboBox IsEditable="True"  Name="навыки_и_способностиComboBox" 
-                                          Text="{Binding Path=Навыки_и_способности, Mode=TwoWay, 
-                                          ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
                                           VerticalAlignment="Center" Width="450" Grid.Column="1" 
                                           Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="3" 
                                           />
@@ -759,8 +695,6 @@
                                        Margin="3" VerticalAlignment="Center" 
                                        />
                                 <ComboBox IsEditable="True"  Name="реакция_на_критикуComboBox" 
-                                          Text="{Binding Path=Реакция_на_критику, Mode=TwoWay, 
-                                          ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
                                           VerticalAlignment="Center" Width="450" Grid.Column="1" 
                                           Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="3" 
                                           />
@@ -779,8 +713,6 @@
                                        Margin="3" VerticalAlignment="Center" 
                                        />
                                 <ComboBox  Name="реакция_на_критику_ЭмоцииComboBox" 
-                                           Text="{Binding Path=Реакция_на_критику_Эмоции, 
-                                    Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
                                            VerticalAlignment="Center" Width="450" Grid.Column="1" 
                                            Grid.Row="0" Height="23" HorizontalAlignment="Left" 
                                            Margin="3" IsEditable="True" 
@@ -800,8 +732,6 @@
                                        Margin="3" VerticalAlignment="Center" 
                                        />
                                 <TextBox  Name="характерные_черты_личностиTextBox" 
-                                          Text="{Binding Path=Характерные_черты_личности, 
-                                          Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
                                           VerticalAlignment="Center" Width="450" Grid.Column="1" 
                                           Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="3" 
                                           />
@@ -821,8 +751,6 @@
                                        Margin="3" VerticalAlignment="Center" 
                                        />
                                 <ComboBox  Name="отношение_к_алкоголюComboBox" 
-                                           Text="{Binding Path=Отношение_к_алкоголю, Mode=TwoWay, 
-                                           ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
                                            VerticalAlignment="Center" Width="450" Grid.Column="1" 
                                            Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="3" 
                                            IsEditable="True" 
@@ -841,10 +769,7 @@
                                        Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" 
                                        Margin="3" VerticalAlignment="Center" 
                                        />
-                                <ComboBox  Name="отношение_к_наркотикамComboBox" 
-                                           Text="{Binding Path=Отношение_к_наркотикам, 
-                                           Mode=TwoWay, ValidatesOnExceptions=true, 
-                                           NotifyOnValidationError=true}" VerticalAlignment="Center" 
+                                <ComboBox  Name="отношение_к_наркотикамComboBox"  VerticalAlignment="Center" 
                                            Width="450" Grid.Column="1" Grid.Row="0" Height="23" 
                                            HorizontalAlignment="Left" Margin="3" IsEditable="True" 
                                            />
@@ -863,8 +788,6 @@
                                        HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" 
                                        />
                                 <TextBox  Name="склонность_к_проф_деятельностиTextBox" 
-                                          Text="{Binding Path=Склонность_к_проф_деятельности, 
-                                          Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
                                           VerticalAlignment="Center" Width="450" Grid.Column="1" Grid.Row="0" 
                                           Height="23" HorizontalAlignment="Left" Margin="3" 
                                           />
@@ -883,8 +806,6 @@
                                        VerticalAlignment="Center" 
                                        />
                                 <TextBox  Name="Подготовка_к_военной_службеTextBox" 
-                                          Text="{Binding Path=Подготовка_к_военной_службе, 
-                                          Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
                                           VerticalAlignment="Center" Width="450" Grid.Column="1" 
                                           Grid.Row="0" Height="23" HorizontalAlignment="Left" 
                                           Margin="3" 

@@ -39,9 +39,7 @@
                             <TextBox Grid.Column="1" Height="23" 
                                      HorizontalAlignment="Left" 
                                      Margin="3,3,0,3" Name="LNameTextBox" 
-                                     Text="{Binding Path=Фамилия, Mode=TwoWay, 
-                                     ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
-                                     VerticalAlignment="Center" Width="450" 
+                                    VerticalAlignment="Center" Width="450" 
                                      />
                         </Grid>
                         <Grid HorizontalAlignment="Stretch" Name="grid2" VerticalAlignment="Top">
@@ -61,10 +59,7 @@
                             <TextBox Grid.Column="2" Height="23" 
                                      HorizontalAlignment="Center" 
                                      Name="FNameTextBox" Margin="3,3,0,3" 
-                                     Text="{Binding Path=Имя, Mode=TwoWay, 
-                                     ValidatesOnExceptions=true, 
-                                     NotifyOnValidationError=true}" 
-                                     VerticalAlignment="Center" Width="450" 
+                                    VerticalAlignment="Center" Width="450" 
                                      />
                         </Grid>
                         <Grid HorizontalAlignment="Stretch" Name="grid3" VerticalAlignment="Top">
@@ -83,9 +78,7 @@
                             <TextBox Grid.Column="1" Grid.Row="0" 
                                      Height="23" HorizontalAlignment="Left" 
                                      Margin="3" Name="MNameTextBox" 
-                                     Text="{Binding Path=Отчество, Mode=TwoWay, 
-                                     ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
-                                     VerticalAlignment="Center" Width="450" 
+                                    VerticalAlignment="Center" Width="450" 
                                      />
                         </Grid>
 

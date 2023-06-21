@@ -71,14 +71,6 @@
           <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Address" Type="nvarchar" MaxLength="200" Nullable="false" />
         </EntityType>
-        <EntityType Name="GroupHealth">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Code" Type="nvarchar" MaxLength="2" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" MaxLength="200" Nullable="false" />
-        </EntityType>
         <EntityType Name="HealthCategory">
           <Key>
             <PropertyRef Name="ID" />
@@ -148,16 +140,6 @@
           <Property Name="CourseOfStudy" Type="char" MaxLength="20" Nullable="false" />
           <Property Name="Faculty" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Finished" Type="bit" Nullable="false" />
-        </EntityType>
-        <EntityType Name="RecruitСommission">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IDRecruit" Type="int" Nullable="false" />
-          <Property Name="IDMedicalConclusion" Type="int" Nullable="false" />
-          <Property Name="DateOfDecisionHelthGroup" Type="date" Nullable="false" />
-          <Property Name="IDGroupHealth" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="ResultLearning">
           <Key>
@@ -275,42 +257,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ConscriptionСommission_Conscript">
-          <End Role="Recruit" Type="Self.Recruit" Multiplicity="1" />
-          <End Role="RecruitСommission" Type="Self.RecruitСommission" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Recruit">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="RecruitСommission">
-              <PropertyRef Name="IDRecruit" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ConscriptionСommission_GroupHelth">
-          <End Role="GroupHealth" Type="Self.GroupHealth" Multiplicity="1" />
-          <End Role="RecruitСommission" Type="Self.RecruitСommission" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="GroupHealth">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="RecruitСommission">
-              <PropertyRef Name="IDGroupHealth" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ConscriptionСommission_MedicalConclusion">
-          <End Role="MedicalConclusion" Type="Self.MedicalConclusion" Multiplicity="1" />
-          <End Role="RecruitСommission" Type="Self.RecruitСommission" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MedicalConclusion">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="RecruitСommission">
-              <PropertyRef Name="IDMedicalConclusion" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Learning_MethodLearning">
           <End Role="MethodLearning" Type="Self.MethodLearning" Multiplicity="0..1" />
           <End Role="Learning" Type="Self.Learning" Multiplicity="*" />
@@ -425,14 +371,12 @@
           <EntitySet Name="Commissar" EntityType="Self.Commissar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Doctor" EntityType="Self.Doctor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="GroupHealth" EntityType="Self.GroupHealth" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HealthCategory" EntityType="Self.HealthCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Learning" EntityType="Self.Learning" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MedicalConclusion" EntityType="Self.MedicalConclusion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MethodLearning" EntityType="Self.MethodLearning" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Recruit" EntityType="Self.Recruit" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RecruitEducation" EntityType="Self.RecruitEducation" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="RecruitСommission" EntityType="Self.RecruitСommission" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ResultLearning" EntityType="Self.ResultLearning" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Summons" EntityType="Self.Summons" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -457,18 +401,6 @@
           <AssociationSet Name="FK_ConscriptEducation_Education" Association="Self.FK_ConscriptEducation_Education">
             <End Role="Education" EntitySet="Education" />
             <End Role="RecruitEducation" EntitySet="RecruitEducation" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ConscriptionСommission_Conscript" Association="Self.FK_ConscriptionСommission_Conscript">
-            <End Role="Recruit" EntitySet="Recruit" />
-            <End Role="RecruitСommission" EntitySet="RecruitСommission" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ConscriptionСommission_GroupHelth" Association="Self.FK_ConscriptionСommission_GroupHelth">
-            <End Role="GroupHealth" EntitySet="GroupHealth" />
-            <End Role="RecruitСommission" EntitySet="RecruitСommission" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ConscriptionСommission_MedicalConclusion" Association="Self.FK_ConscriptionСommission_MedicalConclusion">
-            <End Role="MedicalConclusion" EntitySet="MedicalConclusion" />
-            <End Role="RecruitСommission" EntitySet="RecruitСommission" />
           </AssociationSet>
           <AssociationSet Name="FK_Learning_MethodLearning" Association="Self.FK_Learning_MethodLearning">
             <End Role="MethodLearning" EntitySet="MethodLearning" />
@@ -517,14 +449,12 @@
           <EntitySet Name="Commissar" EntityType="MilitaryRegistrationModel.Commissar" />
           <EntitySet Name="Doctor" EntityType="MilitaryRegistrationModel.Doctor" />
           <EntitySet Name="Education" EntityType="MilitaryRegistrationModel.Education" />
-          <EntitySet Name="GroupHealth" EntityType="MilitaryRegistrationModel.GroupHealth" />
           <EntitySet Name="HealthCategory" EntityType="MilitaryRegistrationModel.HealthCategory" />
           <EntitySet Name="Learning" EntityType="MilitaryRegistrationModel.Learning" />
           <EntitySet Name="MedicalConclusion" EntityType="MilitaryRegistrationModel.MedicalConclusion" />
           <EntitySet Name="MethodLearning" EntityType="MilitaryRegistrationModel.MethodLearning" />
           <EntitySet Name="Recruit" EntityType="MilitaryRegistrationModel.Recruit" />
           <EntitySet Name="RecruitEducation" EntityType="MilitaryRegistrationModel.RecruitEducation" />
-          <EntitySet Name="RecruitСommission" EntityType="MilitaryRegistrationModel.RecruitСommission" />
           <EntitySet Name="ResultLearning" EntityType="MilitaryRegistrationModel.ResultLearning" />
           <EntitySet Name="Summons" EntityType="MilitaryRegistrationModel.Summons" />
           <EntitySet Name="sysdiagrams" EntityType="MilitaryRegistrationModel.sysdiagrams" />
@@ -554,10 +484,6 @@
             <End Role="Education" EntitySet="Education" />
             <End Role="RecruitEducation" EntitySet="RecruitEducation" />
           </AssociationSet>
-          <AssociationSet Name="FK_ConscriptionСommission_GroupHelth" Association="MilitaryRegistrationModel.FK_ConscriptionСommission_GroupHelth">
-            <End Role="GroupHealth" EntitySet="GroupHealth" />
-            <End Role="RecruitСommission" EntitySet="RecruitСommission" />
-          </AssociationSet>
           <AssociationSet Name="FK_Recruit_HealthCategory" Association="MilitaryRegistrationModel.FK_Recruit_HealthCategory">
             <End Role="HealthCategory" EntitySet="HealthCategory" />
             <End Role="Recruit" EntitySet="Recruit" />
@@ -574,10 +500,6 @@
             <End Role="ResultLearning" EntitySet="ResultLearning" />
             <End Role="Learning" EntitySet="Learning" />
           </AssociationSet>
-          <AssociationSet Name="FK_ConscriptionСommission_MedicalConclusion" Association="MilitaryRegistrationModel.FK_ConscriptionСommission_MedicalConclusion">
-            <End Role="MedicalConclusion" EntitySet="MedicalConclusion" />
-            <End Role="RecruitСommission" EntitySet="RecruitСommission" />
-          </AssociationSet>
           <AssociationSet Name="FK_MedicalConclusion_Conscript" Association="MilitaryRegistrationModel.FK_MedicalConclusion_Conscript">
             <End Role="Recruit" EntitySet="Recruit" />
             <End Role="MedicalConclusion" EntitySet="MedicalConclusion" />
@@ -585,10 +507,6 @@
           <AssociationSet Name="FK_ConscriptEducation_Conscript" Association="MilitaryRegistrationModel.FK_ConscriptEducation_Conscript">
             <End Role="Recruit" EntitySet="Recruit" />
             <End Role="RecruitEducation" EntitySet="RecruitEducation" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ConscriptionСommission_Conscript" Association="MilitaryRegistrationModel.FK_ConscriptionСommission_Conscript">
-            <End Role="Recruit" EntitySet="Recruit" />
-            <End Role="RecruitСommission" EntitySet="RecruitСommission" />
           </AssociationSet>
           <AssociationSet Name="FK_Summons_Conscript" Association="MilitaryRegistrationModel.FK_Summons_Conscript">
             <End Role="Recruit" EntitySet="Recruit" />
@@ -671,15 +589,6 @@
           <Property Name="Address" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="RecruitEducation" Relationship="MilitaryRegistrationModel.FK_ConscriptEducation_Education" FromRole="Education" ToRole="RecruitEducation" />
         </EntityType>
-        <EntityType Name="GroupHealth">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Code" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="Title" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="RecruitСommission" Relationship="MilitaryRegistrationModel.FK_ConscriptionСommission_GroupHelth" FromRole="GroupHealth" ToRole="RecruitСommission" />
-        </EntityType>
         <EntityType Name="HealthCategory">
           <Key>
             <PropertyRef Name="ID" />
@@ -715,7 +624,6 @@
           <Property Name="OtolaryngologistConclusion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="DentistConclusion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="DateOfMedicalExamination" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="RecruitСommission" Relationship="MilitaryRegistrationModel.FK_ConscriptionСommission_MedicalConclusion" FromRole="MedicalConclusion" ToRole="RecruitСommission" />
           <NavigationProperty Name="Recruit" Relationship="MilitaryRegistrationModel.FK_MedicalConclusion_Conscript" FromRole="MedicalConclusion" ToRole="Recruit" />
         </EntityType>
         <EntityType Name="MethodLearning">
@@ -751,7 +659,6 @@
           <NavigationProperty Name="Learning" Relationship="MilitaryRegistrationModel.FK_Learning_Recruit" FromRole="Recruit" ToRole="Learning" />
           <NavigationProperty Name="MedicalConclusion" Relationship="MilitaryRegistrationModel.FK_MedicalConclusion_Conscript" FromRole="Recruit" ToRole="MedicalConclusion" />
           <NavigationProperty Name="RecruitEducation" Relationship="MilitaryRegistrationModel.FK_ConscriptEducation_Conscript" FromRole="Recruit" ToRole="RecruitEducation" />
-          <NavigationProperty Name="RecruitСommission" Relationship="MilitaryRegistrationModel.FK_ConscriptionСommission_Conscript" FromRole="Recruit" ToRole="RecruitСommission" />
           <NavigationProperty Name="Summons" Relationship="MilitaryRegistrationModel.FK_Summons_Conscript" FromRole="Recruit" ToRole="Summons" />
         </EntityType>
         <EntityType Name="RecruitEducation">
@@ -766,19 +673,6 @@
           <Property Name="Finished" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Education" Relationship="MilitaryRegistrationModel.FK_ConscriptEducation_Education" FromRole="RecruitEducation" ToRole="Education" />
           <NavigationProperty Name="Recruit" Relationship="MilitaryRegistrationModel.FK_ConscriptEducation_Conscript" FromRole="RecruitEducation" ToRole="Recruit" />
-        </EntityType>
-        <EntityType Name="RecruitСommission">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IDRecruit" Type="Int32" Nullable="false" />
-          <Property Name="IDMedicalConclusion" Type="Int32" Nullable="false" />
-          <Property Name="DateOfDecisionHelthGroup" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="IDGroupHealth" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="GroupHealth" Relationship="MilitaryRegistrationModel.FK_ConscriptionСommission_GroupHelth" FromRole="RecruitСommission" ToRole="GroupHealth" />
-          <NavigationProperty Name="MedicalConclusion" Relationship="MilitaryRegistrationModel.FK_ConscriptionСommission_MedicalConclusion" FromRole="RecruitСommission" ToRole="MedicalConclusion" />
-          <NavigationProperty Name="Recruit" Relationship="MilitaryRegistrationModel.FK_ConscriptionСommission_Conscript" FromRole="RecruitСommission" ToRole="Recruit" />
         </EntityType>
         <EntityType Name="ResultLearning">
           <Key>
@@ -915,18 +809,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ConscriptionСommission_GroupHelth">
-          <End Type="MilitaryRegistrationModel.GroupHealth" Role="GroupHealth" Multiplicity="1" />
-          <End Type="MilitaryRegistrationModel.RecruitСommission" Role="RecruitСommission" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="GroupHealth">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="RecruitСommission">
-              <PropertyRef Name="IDGroupHealth" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Recruit_HealthCategory">
           <End Type="MilitaryRegistrationModel.HealthCategory" Role="HealthCategory" Multiplicity="0..1" />
           <End Type="MilitaryRegistrationModel.Recruit" Role="Recruit" Multiplicity="*" />
@@ -975,18 +857,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ConscriptionСommission_MedicalConclusion">
-          <End Type="MilitaryRegistrationModel.MedicalConclusion" Role="MedicalConclusion" Multiplicity="1" />
-          <End Type="MilitaryRegistrationModel.RecruitСommission" Role="RecruitСommission" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MedicalConclusion">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="RecruitСommission">
-              <PropertyRef Name="IDMedicalConclusion" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_MedicalConclusion_Conscript">
           <End Type="MilitaryRegistrationModel.Recruit" Role="Recruit" Multiplicity="0..1" />
           <End Type="MilitaryRegistrationModel.MedicalConclusion" Role="MedicalConclusion" Multiplicity="*" />
@@ -1007,18 +877,6 @@
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="RecruitEducation">
-              <PropertyRef Name="IDRecruit" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ConscriptionСommission_Conscript">
-          <End Type="MilitaryRegistrationModel.Recruit" Role="Recruit" Multiplicity="1" />
-          <End Type="MilitaryRegistrationModel.RecruitСommission" Role="RecruitСommission" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Recruit">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="RecruitСommission">
               <PropertyRef Name="IDRecruit" />
             </Dependent>
           </ReferentialConstraint>
@@ -1124,15 +982,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="GroupHealth">
-            <EntityTypeMapping TypeName="MilitaryRegistrationModel.GroupHealth">
-              <MappingFragment StoreEntitySet="GroupHealth">
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Code" ColumnName="Code" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="HealthCategory">
             <EntityTypeMapping TypeName="MilitaryRegistrationModel.HealthCategory">
               <MappingFragment StoreEntitySet="HealthCategory">
@@ -1204,17 +1053,6 @@
                 <ScalarProperty Name="Faculty" ColumnName="Faculty" />
                 <ScalarProperty Name="CourseOfStudy" ColumnName="CourseOfStudy" />
                 <ScalarProperty Name="IDEducation" ColumnName="IDEducation" />
-                <ScalarProperty Name="IDRecruit" ColumnName="IDRecruit" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="RecruitСommission">
-            <EntityTypeMapping TypeName="MilitaryRegistrationModel.RecruitСommission">
-              <MappingFragment StoreEntitySet="RecruitСommission">
-                <ScalarProperty Name="IDGroupHealth" ColumnName="IDGroupHealth" />
-                <ScalarProperty Name="DateOfDecisionHelthGroup" ColumnName="DateOfDecisionHelthGroup" />
-                <ScalarProperty Name="IDMedicalConclusion" ColumnName="IDMedicalConclusion" />
                 <ScalarProperty Name="IDRecruit" ColumnName="IDRecruit" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>

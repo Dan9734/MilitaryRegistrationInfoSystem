@@ -39,8 +39,6 @@
                             <TextBox Grid.Column="1" Height="23" 
                                      HorizontalAlignment="Left" 
                                      Margin="3,3,0,3" Name="LNameTextBox" 
-                                     Text="{Binding Path=Фамилия, Mode=TwoWay, 
-                                     ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
                                      VerticalAlignment="Center" Width="450" 
                                      TextChanged="LNameTextBox_TextChanged"
                                      />
@@ -63,9 +61,6 @@
                                      HorizontalAlignment="Center" 
                                      Name="FNameTextBox" Margin="3,3,0,3"
                                      TextChanged="FNameTextBox_TextChanged" 
-                                     Text="{Binding Path=Имя, Mode=TwoWay, 
-                                     ValidatesOnExceptions=true, 
-                                     NotifyOnValidationError=true}" 
                                      VerticalAlignment="Center" Width="450" 
                                      />
                         </Grid>
@@ -106,8 +101,6 @@
                                      Height="23" HorizontalAlignment="Left" 
                                      Margin="3" Name="SPassTextBox"
                                      TextChanged="SPassTextBox_TextChanged"
-                                     Text="{Binding Path=Серия_паспорта, Mode=TwoWay, 
-                                     ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
                                      VerticalAlignment="Center" Width="450" 
                                      />
                         </Grid>
@@ -127,9 +120,7 @@
                                  Height="23" HorizontalAlignment="Left" 
                                  Margin="3" Name="NPassTextBox"
                                  TextChanged="NPassTextBox_TextChanged"
-                                 Text="{Binding Path=Номер_паспорта, 
-                                 Mode=TwoWay, ValidatesOnExceptions=true, 
-                                 NotifyOnValidationError=true}" VerticalAlignment="Center" Width="450" 
+                                     VerticalAlignment="Center" Width="450" 
                                  />
                         </Grid>
 
@@ -149,9 +140,7 @@
                             <TextBox Grid.Column="1" Grid.Row="0" 
                                      Height="23" HorizontalAlignment="Left" 
                                      Margin="3" Name="PositionTextBox"
-                                     TextChanged="PositionTextBox_TextChanged"
-                                     Text="{Binding Path=Position, 
-                                     Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
+                                     TextChanged="PositionTextBox_TextChanged" 
                                      VerticalAlignment="Center" Width="450" 
                                      />
                         </Grid>
@@ -172,8 +161,6 @@
                                      Height="23" HorizontalAlignment="Left" 
                                      Margin="3" Name="LoginTextBox"
                                      TextChanged="LoginTextBox_TextChanged"
-                                     Text="{Binding Path=Login, Mode=TwoWay, 
-                                     ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
                                      VerticalAlignment="Center" Width="450" 
                                      />
                         </Grid>
@@ -194,9 +181,7 @@
                                      Height="23" HorizontalAlignment="Left" 
                                      Margin="3" Name="PasswordTextBox" 
                                      TextChanged="PasswordTextBox_TextChanged"
-                                     Text="{Binding Path=Password,
-                                     Mode=TwoWay, ValidatesOnExceptions=true, 
-                                     NotifyOnValidationError=true}" VerticalAlignment="Center" Width="450" 
+                                     VerticalAlignment="Center" Width="450" 
                                      />
                         </Grid>
                         <Grid HorizontalAlignment="Stretch" Name="grid13" VerticalAlignment="Top">
@@ -213,9 +198,8 @@
                                    VerticalAlignment="Center" 
                                    />
                             <CheckBox Grid.Column="1" Height="25" 
+                                      x:Name="IsAdminCheckBox"
                                       Width="25" HorizontalAlignment="Left"  
-                                      x:Name="IsAdminCheckBox" IsChecked="{Binding Path=IsAdmin, 
-                                      Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" 
                                       VerticalAlignment="Center" RenderTransformOrigin="0.565,0.597" 
                                       Margin="3,0,0,0" Checked="IsAdminCheckBox_Checked" 
                                       />
@@ -239,9 +223,8 @@
                                    />
                             <TextBox Grid.Column="2" Height="23" 
                                      HorizontalAlignment="Center" Name="PhoneTextBox"
-                                     TextChanged="PhoneTextBox_TextChanged"
-                                     Text="{Binding Path=Phone, Mode=TwoWay, ValidatesOnExceptions=true, 
-                                     NotifyOnValidationError=true}" VerticalAlignment="Center" 
+                                     TextChanged="PhoneTextBox_TextChanged" 
+                                     VerticalAlignment="Center" 
                                      Width="450"
                                      />
                         </Grid>
@@ -262,8 +245,7 @@
                             <TextBox Grid.Column="2" Height="23" 
                                      HorizontalAlignment="Left" Name="DescrTextBox"
                                      TextChanged="DescrTextBox_TextChanged"
-                                     Text="{Binding Path=Description, Mode=TwoWay, ValidatesOnExceptions=true, 
-                                     NotifyOnValidationError=true}" VerticalAlignment="Center" Width="450" 
+                                     VerticalAlignment="Center" Width="450" 
                                      />
                         </Grid>
                     </StackPanel>

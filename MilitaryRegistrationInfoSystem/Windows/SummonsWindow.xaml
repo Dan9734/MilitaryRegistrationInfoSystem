@@ -1,11 +1,11 @@
-﻿<Window x:Class="MilitaryRegistrationInfoSystem.Windows.TherapistWindow"
+﻿<Window x:Class="MilitaryRegistrationInfoSystem.Windows.SummonsWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MilitaryRegistrationInfoSystem.Windows"
         mc:Ignorable="d"
-        Title="АСУ учета военнообязанных терапевт" Height="500" Width="1000" WindowStartupLocation="CenterScreen">
+        Title="SummonsWindow" Height="450" Width="800">
     <Grid>
         <Menu DockPanel.Dock="Top" FontSize="14">
 
@@ -113,13 +113,13 @@
             IsReadOnly="True" Height="420" Margin="0,64,0,0"
             >
             <DataGrid.Columns >
-                <DataGridTextColumn x:Name="фамилияColumn" Binding="{Binding Path=LName}" Header="Фамилия" Width="150" />
+                <!--<DataGridTextColumn x:Name="фамилияColumn" Binding="{Binding Path=LName}" Header="Фамилия" Width="150" />
                 <DataGridTextColumn x:Name="имяColumn" Binding="{Binding Path=FName}" Header="Имя" Width="120" />
                 <DataGridTextColumn x:Name="отчествоColumn" Binding="{Binding Path=MName}" Header="Отчество" Width="150" />
                 <DataGridTextColumn Header="Дата рождения" Width="*" Binding="{Binding DateBirth}"/>
                 <DataGridTextColumn Header="Паспорт (серия)" Width="*" Binding="{Binding S_Pass}"/>
                 <DataGridTextColumn Header="Паспорт (номер)" Width="*" Binding="{Binding N_Pass}"/>
-                <DataGridTextColumn Header="Результат мед комиссии" Width="*" Binding="{Binding InSummary}" Foreground="Black"/>
+                <DataGridTextColumn Header="Результат мед комиссии" Width="*" Binding="{Binding InSummary}" Foreground="Black"/>-->
             </DataGrid.Columns>
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">

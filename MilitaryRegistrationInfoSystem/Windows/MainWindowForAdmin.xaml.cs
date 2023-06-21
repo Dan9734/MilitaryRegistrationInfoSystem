@@ -39,6 +39,13 @@ namespace MilitaryRegistrationInfoSystem.Windows
             "По имени",
             "По должности"
         };
+        private void Add()
+        {
+            AddWorkerWindow addWorkerWindow = new AddWorkerWindow();
+            Hide();
+            addWorkerWindow.ShowDialog();
+            Show();
+        }
 
         private void Filter()
         {
@@ -78,26 +85,26 @@ namespace MilitaryRegistrationInfoSystem.Windows
 
         private void AllPersonal_KeyUp(object sender, KeyEventArgs e)
         {
-            //if (e.Key == Key.Delete || e.Key == Key.Back)
-            //{
-            //    var resClick = MessageBox.Show($"Удалить пользователя {(AllPersonal.SelectedItem as EF.Client).LName}", "Подтвержение", MessageBoxButton.YesNo, MessageBoxImage.Information);
+            if (e.Key == Key.Delete || e.Key == Key.Back)
+            {
+                var resClick = MessageBox.Show($"Удалить пользователя {(AllPersonal.SelectedItem as EF.Worker).LName}", "Подтвержение", MessageBoxButton.YesNo, MessageBoxImage.Information);
 
 
-            //    if (resClick == MessageBoxResult.Yes)
-            //    {
-            //        EF.Client client = new EF.Client();
-            //        if (!(AllPersonal.SelectedItem is EF.Client))
-            //        {
-            //            MessageBox.Show("Запись не выбраны");
-            //            return;
-            //        }
-            //        client = AllPersonal.SelectedItem as EF.Client;
+                if (resClick == MessageBoxResult.Yes)
+                {
+                    EF.Worker client = new EF.Worker();
+                    if (!(AllPersonal.SelectedItem is EF.Worker))
+                    {
+                        MessageBox.Show("Запись не выбраны");
+                        return;
+                    }
+                    client = AllPersonal.SelectedItem as EF.Worker;
 
-            //        ClassEntities.context.Client.Remove(client);
-            //        ClassEntities.context.SaveChanges();
-            //    }
-            //}
-            //Filter();
+                    context.Worker.Remove(client);
+                    context.SaveChanges();
+                }
+            }
+            Filter();
         }
         private void tsbSave_Click(object sender, RoutedEventArgs e)
         {
@@ -106,51 +113,17 @@ namespace MilitaryRegistrationInfoSystem.Windows
 
         private void LVEmployee_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            EF.Worker worker = AllPersonal.SelectedItem as EF.Worker;
-            AddWorkerWindow add = new AddWorkerWindow(worker);
-            add.ShowDialog();
+         
         }
         private void tsmiExit_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void DataUpdate()
-        {
-            //dbDataSetЗапрос_ПризывникTableAdapter.Fill(dbDataSet.Запрос_Призывник);
-        }
-        //private void tsbAdd_Click(object sender, RoutedEventArgs e)
-        //{
-        //    AddWorkerWindow form = new AddWorkerWindow();
-        //    var result = form.ShowDialog();
-        //    if (result != null && result == true)
-        //    {
-        //        DataUpdate();
-        //    }
-        //}
+      
         private void tsbAdd_Click(object sender, RoutedEventArgs e)
         {
-            AddWorkerWindow addWorkerWindow = new AddWorkerWindow();
-            addWorkerWindow.ShowDialog();
-            this.Close();
+            Add();
+            Filter();
         }
         private void tsbEdit_Click(object sender, RoutedEventArgs e)
         {
@@ -179,12 +152,29 @@ namespace MilitaryRegistrationInfoSystem.Windows
 
         private void tsbDelete_Click(object sender, RoutedEventArgs e)
         {
+                var resClick = MessageBox.Show($"Удалить пользователя {(AllPersonal.SelectedItem as EF.Worker).LName}", "Подтвержение", MessageBoxButton.YesNo, MessageBoxImage.Information);
 
+
+                if (resClick == MessageBoxResult.Yes)
+                {
+                    EF.Worker client = new EF.Worker();
+                    if (!(AllPersonal.SelectedItem is EF.Worker))
+                    {
+                        MessageBox.Show("Запись не выбраны");
+                        return;
+                    }
+                    client = AllPersonal.SelectedItem as EF.Worker;
+
+                    context.Worker.Remove(client);
+                    context.SaveChanges();
+               
+            }
+            Filter();
         }
 
         private void tsbRefresh_Click(object sender, RoutedEventArgs e)
         {
-
+            Filter();
         }
         private void tsmiReportRecruitQuestionnaire_Click(object sender, RoutedEventArgs e)
         {
@@ -214,6 +204,14 @@ namespace MilitaryRegistrationInfoSystem.Windows
 
         private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
+            Filter();
+        }
+
+        private void AllPersonal_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            EF.Worker worker = AllPersonal.SelectedItem as EF.Worker;
+            AddWorkerWindow add = new AddWorkerWindow(worker);
+            add.ShowDialog();
             Filter();
         }
     }

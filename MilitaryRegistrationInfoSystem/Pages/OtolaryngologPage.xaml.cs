@@ -1,9 +1,9 @@
-﻿using MilitaryRegistrationInfoSystem.Windows;
+﻿using MilitaryRegistrationInfoSystem.ClassHelper;
+using MilitaryRegistrationInfoSystem.EF;
+using MilitaryRegistrationInfoSystem.Windows;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -15,20 +15,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MilitaryRegistrationInfoSystem.ClassHelper;
 using static MilitaryRegistrationInfoSystem.ClassHelper.AppData;
-using MilitaryRegistrationInfoSystem.EF;
 
-namespace MilitaryRegistrationInfoSystem
+namespace MilitaryRegistrationInfoSystem.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для OtolaryngologPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class OtolaryngologPage : Page
     {
         List<EF.Recruit> recruit = new List<EF.Recruit>();
 
-        public MainWindow()
+        public OtolaryngologPage()
         {
             InitializeComponent();
             AllPersonal.ItemsSource = context.Recruit.ToList();
@@ -36,9 +34,9 @@ namespace MilitaryRegistrationInfoSystem
             cbSort.SelectedIndex = 0;
             Filter();
         }
-         List<string> listForSort = new List<string>()
-        {
-            "По умолчанию",
+        List<string> listForSort = new List<string>()
+            {
+                "По умолчанию",
             "По фамилии",
             "По имени",
             "По дате рождения"
@@ -84,7 +82,9 @@ namespace MilitaryRegistrationInfoSystem
         {
             if (e.Key == Key.Delete || e.Key == Key.Back)
             {
-                var resClick = MessageBox.Show($"Удалить пользователя {(AllPersonal.SelectedItem as EF.Recruit).LName}", "Подтвержение", MessageBoxButton.YesNo, MessageBoxImage.Information);
+                var recruitDel = AllPersonal.SelectedItem as EF.Recruit;
+                var medicalConclusion = ClassHelper.AppData.context.MedicalConclusion.Where(i => i.IDRecruit == recruitDel.ID).FirstOrDefault();
+                var resClick = MessageBox.Show($"Удалить мед заключение  {recruitDel.LName}", "Подтвержение", MessageBoxButton.YesNo, MessageBoxImage.Information);
 
 
                 if (resClick == MessageBoxResult.Yes)
@@ -97,7 +97,7 @@ namespace MilitaryRegistrationInfoSystem
                     }
                     recruit = AllPersonal.SelectedItem as EF.Recruit;
 
-                    AppData.context.Recruit.Remove(recruit);
+                    AppData.context.MedicalConclusion.Where(i => i.ID == medicalConclusion.ID).First().OtolaryngologistConclusion = " ";
                     AppData.context.SaveChanges();
                 }
             }
@@ -109,57 +109,66 @@ namespace MilitaryRegistrationInfoSystem
 
         }
 
+        private void LVEmployee_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            EF.Recruit recruit = AllPersonal.SelectedItem as EF.Recruit;
+            //AddRecruitWindow add = new AddRecruitWindow(recruit);
+            //add.ShowDialog();
+            AddRecruitMedicalInfoWindow addRecruitMedicalInfoWindow = new AddRecruitMedicalInfoWindow(recruit, 6);
+            addRecruitMedicalInfoWindow.ShowDialog();
+        }
+
         private void tsmiExit_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+
         }
- 
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
+        {
+
+        }
         private void DataUpdate()
         {
             //dbDataSetЗапрос_ПризывникTableAdapter.Fill(dbDataSet.Запрос_Призывник);
         }
         private void tsbAdd_Click(object sender, RoutedEventArgs e)
         {
-            AddRecruitWindow form = new AddRecruitWindow();
-            var result = form.ShowDialog();
-            if (result != null && result == true)
-            {
-                DataUpdate();
-            }
-            Filter();
+            EF.Recruit recruit = AllPersonal.SelectedItem as EF.Recruit;
+            AddRecruitMedicalInfoWindow form = new AddRecruitMedicalInfoWindow(recruit, 6);
+            form.ShowDialog();
+            //var result = form.ShowDialog();
+            //if (result != null && result == true)
+            //{
+            //    DataUpdate();
+            //}
         }
 
-        private void LVEmployee_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            EF.Recruit recruit = AllPersonal.SelectedItem as EF.Recruit;
-            AddRecruitWindow add = new AddRecruitWindow(recruit);
-            add.ShowDialog();
-            Filter();
-        }
         private void tsbEdit_Click(object sender, RoutedEventArgs e)
         {
-            
-                if (AllPersonal.SelectedItem is Recruit recruit)
-                {
-                    var resMAss = MessageBox.Show($"Вы хотите изменить пользователя {recruit.LName}  {recruit.FName}", "Предупреждение", MessageBoxButton.YesNo);
-                    if (resMAss == MessageBoxResult.Yes)
-                    {
-                        this.Hide();
-                        AddRecruitWindow addRecruitWindow = new AddRecruitWindow(recruit);
-                      //  ClassPD.IDRecruit = recruit.ID;
-                        addRecruitWindow.ShowDialog();
-                        this.Close();
-                    }
-                    else
-                    {
-                        return;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show($"Вы не выбрали пользователя", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            Filter();
+            if (AllPersonal.SelectedItem is Recruit recruit)
+            {
+                AddRecruitMedicalInfoWindow addRecruitMedicalInfoWindow = new AddRecruitMedicalInfoWindow(recruit, 6);
+                addRecruitMedicalInfoWindow.ShowDialog();
+
+            }
+            else
+            {
+                MessageBox.Show($"Вы не выбрали пользователя", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void tsbRefresh_Click(object sender, RoutedEventArgs e)

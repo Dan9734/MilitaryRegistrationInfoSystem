@@ -22,7 +22,6 @@ namespace MilitaryRegistrationInfoSystem.EF
             this.Learning = new HashSet<Learning>();
             this.MedicalConclusion = new HashSet<MedicalConclusion>();
             this.RecruitEducation = new HashSet<RecruitEducation>();
-            this.RecruitСommission = new HashSet<RecruitСommission>();
             this.Summons = new HashSet<Summons>();
         }
     
@@ -53,8 +52,6 @@ namespace MilitaryRegistrationInfoSystem.EF
         public virtual ICollection<MedicalConclusion> MedicalConclusion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RecruitEducation> RecruitEducation { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RecruitСommission> RecruitСommission { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Summons> Summons { get; set; }
     }

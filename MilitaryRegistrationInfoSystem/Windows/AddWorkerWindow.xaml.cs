@@ -274,6 +274,7 @@ namespace MilitaryRegistrationInfoSystem.Windows
                 ClassHelper.AppData.context.SaveChanges();
                 MessageBox.Show("Сотрудник успешно добавлен!");
                 this.Close();
+                
             };
             //MessageBox.Show("Сотрудник добавлен");
             //context.Worker.Add(worker);

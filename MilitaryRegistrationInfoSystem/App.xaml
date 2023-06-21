@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:MilitaryRegistrationInfoSystem"
              StartupUri="Windows/AuthorizationWindow.xaml">
     <Application.Resources>
-         
+        
     </Application.Resources>
 </Application>

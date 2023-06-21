@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MilitaryRegistrationInfoSystem.ClassHelper;
 using static MilitaryRegistrationInfoSystem.ClassHelper.AppData;
-using MilitaryRegistrationInfoSystem.EF;
+
 
 namespace MilitaryRegistrationInfoSystem.Windows
 {

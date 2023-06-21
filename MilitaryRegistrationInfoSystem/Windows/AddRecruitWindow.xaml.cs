@@ -51,7 +51,7 @@ namespace MilitaryRegistrationInfoSystem.Windows
         }
             private void bCancel_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         private void tsbEduDelete_Click(object sender, RoutedEventArgs e)

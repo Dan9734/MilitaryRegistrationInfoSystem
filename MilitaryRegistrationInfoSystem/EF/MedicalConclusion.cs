@@ -14,12 +14,6 @@ namespace MilitaryRegistrationInfoSystem.EF
     
     public partial class MedicalConclusion
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MedicalConclusion()
-        {
-            this.RecruitСommission = new HashSet<RecruitСommission>();
-        }
-    
         public int ID { get; set; }
         public Nullable<int> IDRecruit { get; set; }
         public string TherapistConclusion { get; set; }
@@ -31,8 +25,6 @@ namespace MilitaryRegistrationInfoSystem.EF
         public string DentistConclusion { get; set; }
         public Nullable<System.DateTime> DateOfMedicalExamination { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RecruitСommission> RecruitСommission { get; set; }
         public virtual Recruit Recruit { get; set; }
     }
 }

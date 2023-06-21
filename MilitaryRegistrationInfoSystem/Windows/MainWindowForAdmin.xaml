@@ -111,7 +111,7 @@
         <DataGrid
             x:Name="AllPersonal"
             VerticalAlignment="Top"
-            MouseDoubleClick="LVEmployee_MouseDoubleClick"
+            MouseDoubleClick="AllPersonal_MouseDoubleClick"
             AutoGenerateColumns="False"  Background="{x:Null}" Foreground="black" BorderBrush="{x:Null}"
             SelectionChanged="AllPersonal_SelectionChanged"
             KeyUp="AllPersonal_KeyUp"

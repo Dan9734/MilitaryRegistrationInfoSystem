@@ -30,14 +30,12 @@ namespace MilitaryRegistrationInfoSystem.EF
         public virtual DbSet<Commissar> Commissar { get; set; }
         public virtual DbSet<Doctor> Doctor { get; set; }
         public virtual DbSet<Education> Education { get; set; }
-        public virtual DbSet<GroupHealth> GroupHealth { get; set; }
         public virtual DbSet<HealthCategory> HealthCategory { get; set; }
         public virtual DbSet<Learning> Learning { get; set; }
         public virtual DbSet<MedicalConclusion> MedicalConclusion { get; set; }
         public virtual DbSet<MethodLearning> MethodLearning { get; set; }
         public virtual DbSet<Recruit> Recruit { get; set; }
         public virtual DbSet<RecruitEducation> RecruitEducation { get; set; }
-        public virtual DbSet<RecruitСommission> RecruitСommission { get; set; }
         public virtual DbSet<ResultLearning> ResultLearning { get; set; }
         public virtual DbSet<Summons> Summons { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
