@@ -71,7 +71,7 @@ namespace MilitaryRegistrationInfoSystem.Windows
             LNameTextBox.Text = recruit.LName;
             FNameTextBox.Text = recruit.FName;
             MNameTextBox.Text = recruit.MName;
-           
+            DateDatePicker.Text = DateTime.Now.ToShortDateString();
         }
 
         private void bOk_Click(object sender, RoutedEventArgs e)
@@ -136,7 +136,14 @@ namespace MilitaryRegistrationInfoSystem.Windows
                 if (idRole == 1)
                 {
                     MedicalConclusion medicalConclusion = new MedicalConclusion();
-                    medicalConclusion.DateOfMedicalExamination = Convert.ToDateTime(DateDatePicker.Text);
+                    try
+                    {
+                        medicalConclusion.DateOfMedicalExamination = Convert.ToDateTime(DateDatePicker.Text);
+                    }
+                    catch
+                    {
+                        medicalConclusion.DateOfMedicalExamination = DateTime.Now;
+                    }
                     medicalConclusion.TherapistConclusion = ConclusionTextBox.Text;
                     medicalConclusion.IDRecruit = recruit1.ID;
                     ClassHelper.AppData.context.MedicalConclusion.Add(medicalConclusion);

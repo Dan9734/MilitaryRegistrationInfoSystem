@@ -95,7 +95,7 @@ namespace MilitaryRegistrationInfoSystem.Windows
                     EF.Worker client = new EF.Worker();
                     if (!(AllPersonal.SelectedItem is EF.Worker))
                     {
-                        MessageBox.Show("Запись не выбраны");
+                        MessageBox.Show("Пользователь не выбран");
                         return;
                     }
                     client = AllPersonal.SelectedItem as EF.Worker;
@@ -114,6 +114,12 @@ namespace MilitaryRegistrationInfoSystem.Windows
         private void LVEmployee_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
          
+        }
+        private void tsmiChangeProfile_Click(object sender, RoutedEventArgs e)
+        {
+            AuthorizationWindow authorizationWindow = new AuthorizationWindow();
+            Close();
+            authorizationWindow.ShowDialog();
         }
         private void tsmiExit_Click(object sender, RoutedEventArgs e)
         {
@@ -176,10 +182,6 @@ namespace MilitaryRegistrationInfoSystem.Windows
         {
             Filter();
         }
-        private void tsmiReportRecruitQuestionnaire_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
         private void tsmiReportRecruitEduList_Click(object sender, RoutedEventArgs e)
         {
 
@@ -189,10 +191,6 @@ namespace MilitaryRegistrationInfoSystem.Windows
 
         }
         private void tsmiBook_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void tsmiUser_Click(object sender, RoutedEventArgs e)
         {
 
         }

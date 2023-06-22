@@ -11,6 +11,7 @@
 
             <MenuItem Header="Система">
                 <MenuItem Header="Выход" Name="tsmiExit" Click="tsmiExit_Click" />
+                <MenuItem Header="Сменить пользователя" Name="tsmiChangeProfile" Click="tsmiChangeProfile_Click" />
             </MenuItem>
             <MenuItem Header="Сотрудник">
                 <MenuItem Header="Добавить" Name="tsmiAdd" Click="tsbAdd_Click" />
@@ -18,13 +19,6 @@
                 <MenuItem Header="Удалить" Name="tsmiDelete" Click="tsbDelete_Click" />
                 <Separator/>
                 <MenuItem Header="Обновить" Name="tsmiRefresh" Click="tsbRefresh_Click" />
-            </MenuItem>
-            <MenuItem Header="Отчеты">
-                <MenuItem Header="Анкета" Name="tsmiReportRecruitQuestionnaire" Click="tsmiReportRecruitQuestionnaire_Click" />
-                <MenuItem Header="Список изучений" Name="tsmiReportRecruitEduList" Click="tsmiReportRecruitEduList_Click" />
-                <MenuItem Header="Сводный отчет" Name="tsmiReportConsolidate" Click="tsmiReportConsolidate_Click" />
-                <Separator/>
-                <MenuItem Header="Редактировать отчеты" Name="reportEditToolStripMenuItem" IsChecked="False" IsCheckable="True" />
             </MenuItem>
             <MenuItem Header="Настройки">
                 <MenuItem Header="Справочники" Name="tsmiBook" Click="tsmiBook_Click" />
@@ -61,11 +55,6 @@
                         ToolTip="Обновить" 
                         Click="tsbRefresh_Click">
                     <Image Source="/Resources/database_refresh_9744.png" />
-                </Button>
-                <Button Name="tsbSave" 
-                        ToolTip="Сохранить" 
-                        Click="tsbSave_Click">
-                    <Image Source="/Resources/disk_3464.png" />
                 </Button>
                 <TextBlock Text="Поиск:"
                  FontSize="14"

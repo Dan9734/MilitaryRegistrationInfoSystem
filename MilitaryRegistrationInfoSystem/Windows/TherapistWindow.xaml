@@ -11,6 +11,7 @@
 
             <MenuItem Header="Система">
                 <MenuItem Header="Выход" Name="tsmiExit" Click="tsmiExit_Click" />
+                <MenuItem Header="Сменить пользователя" Name="tsmiChangeProfile" Click="tsmiChangeProfile_Click" />
             </MenuItem>
             <MenuItem Header="Военнообязанный">
                 <MenuItem Header="Добавить" Name="tsmiAdd" Click="tsbAdd_Click" />
@@ -20,9 +21,7 @@
                 <MenuItem Header="Обновить" Name="tsmiRefresh" Click="tsbRefresh_Click" />
             </MenuItem>
             <MenuItem Header="Отчеты">
-                <MenuItem Header="Анкета" Name="tsmiReportRecruitQuestionnaire" Click="tsmiReportRecruitQuestionnaire_Click" />
-                <MenuItem Header="Список изучений" Name="tsmiReportRecruitEduList" Click="tsmiReportRecruitEduList_Click" />
-                <MenuItem Header="Сводный отчет" Name="tsmiReportConsolidate" Click="tsmiReportConsolidate_Click" />
+                <MenuItem Header="Мед. отчеты" Name="tsmiMed" Click="tsmiMed_Click"/>
                 <Separator/>
                 <MenuItem Header="Редактировать отчеты" Name="reportEditToolStripMenuItem" IsChecked="False" IsCheckable="True" />
             </MenuItem>

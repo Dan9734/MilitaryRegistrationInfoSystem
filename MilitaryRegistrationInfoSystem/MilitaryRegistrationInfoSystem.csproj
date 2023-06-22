@@ -149,9 +149,6 @@
     <Compile Include="Windows\RecruitMedicalInfoWindow.xaml.cs">
       <DependentUpon>RecruitMedicalInfoWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\RefBooksWindow.xaml.cs">
-      <DependentUpon>RefBooksWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Windows\SummonsWindow.xaml.cs">
       <DependentUpon>SummonsWindow.xaml</DependentUpon>
     </Compile>
@@ -252,10 +249,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\RecruitMedicalInfoWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\RefBooksWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

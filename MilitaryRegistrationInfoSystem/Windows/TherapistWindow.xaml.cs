@@ -150,13 +150,13 @@ namespace MilitaryRegistrationInfoSystem.Windows
             EF.Recruit recruit = AllPersonal.SelectedItem as EF.Recruit;
             AddRecruitMedicalInfoWindow form = new AddRecruitMedicalInfoWindow(recruit,1);
             form.ShowDialog();
-            //var result = form.ShowDialog();
-            //if (result != null && result == true)
-            //{
-            //    DataUpdate();
-            //}
         }
-
+        private void tsmiChangeProfile_Click(object sender, RoutedEventArgs e)
+        {
+            AuthorizationWindow authorizationWindow = new AuthorizationWindow();
+            Close();
+            authorizationWindow.ShowDialog();
+        }
         private void tsbEdit_Click(object sender, RoutedEventArgs e)
         {
             if (AllPersonal.SelectedItem is Recruit recruit)
@@ -164,12 +164,19 @@ namespace MilitaryRegistrationInfoSystem.Windows
                 this.Hide();
                 AddRecruitMedicalInfoWindow addRecruitMedicalInfoWindow = new AddRecruitMedicalInfoWindow(recruit,1);
                 addRecruitMedicalInfoWindow.ShowDialog();
-                this.Close();
+                this.Show();
             }
             else
             {
                 MessageBox.Show($"Вы не выбрали пользователя", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+        private void tsmiMed_Click(object sender, RoutedEventArgs e)
+        {
+            RecruitMedicalInfoWindow recruitMedical = new RecruitMedicalInfoWindow();
+            Hide();
+            recruitMedical.ShowDialog();
+            Show();
         }
 
         private void tsbRefresh_Click(object sender, RoutedEventArgs e)

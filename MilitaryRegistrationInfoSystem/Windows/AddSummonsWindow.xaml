@@ -5,8 +5,138 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MilitaryRegistrationInfoSystem.Windows"
         mc:Ignorable="d"
-        Title="AddSummonsWindow" Height="450" Width="800">
+        Title="AddSummonsWindow" Height="870" Width="765" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <DockPanel Name="dockPanel1">
+
+            <StackPanel DockPanel.Dock="Bottom">
+                <ToolBar Height="45">
+                    <Button Name="BtnAdd" ToolTip="Сохранить" Click="bOk_Click">
+                        <Image Source="/Resources/check.png" />
+                    </Button>
+                    <Separator />
+                    <Button Name="bCancel" ToolTip="Отмена" Click="bCancel_Click">
+                        <Image Source="/Resources/cross.png"/>
+                    </Button>
+                </ToolBar>
+            </StackPanel>
+            <TabControl Name="mainTabControl">
+                <TabItem Header="Основная информация" Name="WorkerMainTabItem">
+                    <StackPanel>
+                        <Grid HorizontalAlignment="Stretch" Name="grid1" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Фамилия:" Width="250" 
+                                   Grid.Column="0" Grid.Row="0" 
+                                   HorizontalAlignment="Left" Margin="3" 
+                                   VerticalAlignment="Center" 
+                                   />
+                            <TextBox Grid.Column="1" Height="23" 
+                                     HorizontalAlignment="Left" 
+                                     Margin="3,3,0,3" Name="LNameTextBox" 
+                                    VerticalAlignment="Center" Width="450" 
+                                     />
+                        </Grid>
+                        <Grid HorizontalAlignment="Stretch" Name="grid2" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="37" />
+                                <ColumnDefinition Width="219"/>
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Имя:"  Width="250" 
+                                   Grid.Column="0" HorizontalAlignment="Left" 
+                                   Margin="3,0,0,0" VerticalAlignment="Center" 
+                                   Grid.ColumnSpan="2" 
+                                   />
+                            <TextBox Grid.Column="2" Height="23" 
+                                     HorizontalAlignment="Center" 
+                                     Name="FNameTextBox" Margin="3,3,0,3" 
+                                    VerticalAlignment="Center" Width="450" 
+                                     />
+                        </Grid>
+                        <Grid HorizontalAlignment="Stretch" Name="grid3" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Отчество:" Width="250" 
+                                   Grid.Column="0" Grid.Row="0" 
+                                   HorizontalAlignment="Left" Margin="3" 
+                                   VerticalAlignment="Center" 
+                                   />
+                            <TextBox Grid.Column="1" Grid.Row="0" 
+                                     Height="23" HorizontalAlignment="Left" 
+                                     Margin="3" Name="MNameTextBox" 
+                                    VerticalAlignment="Center" Width="450" 
+                                     />
+                        </Grid>
+
+                        <Grid HorizontalAlignment="Stretch" Name="grid4" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Дата:" Width="250" 
+                                   Grid.Column="0" Grid.Row="0" 
+                                   HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" 
+                                   />
+                            <DatePicker Grid.Column="1" Grid.Row="0" 
+                                     Height="23" HorizontalAlignment="Left" 
+                                     Margin="3" Name="DateDatePicker" 
+                                     VerticalAlignment="Center" Width="450" 
+                                     />
+                        </Grid>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Повестка" Name="RecruitSecondTabItem">
+                    <StackPanel>
+                        <Grid HorizontalAlignment="Stretch" Name="grid21" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="42" />
+                                <ColumnDefinition Width="214"/>
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Адрес повестки" Width="169" TextWrapping="Wrap"
+                                   Grid.Column="0" HorizontalAlignment="Left" 
+                                   Margin="3,0,0,0" VerticalAlignment="Center" Grid.ColumnSpan="2" 
+                                   />
+                            <TextBox Grid.Column="2" Height="50" 
+                                     HorizontalAlignment="Center" x:Name="tbAddress"
+                                     VerticalAlignment="Center" 
+                                     Width="450"
+                                     />
+                            <TextBlock Text="Причины" Width="169" TextWrapping="Wrap"
+                                   Grid.Column="0" HorizontalAlignment="Left" 
+                                       Grid.Row="1"
+                                   Margin="3,0,0,0" VerticalAlignment="Center" Grid.ColumnSpan="2" 
+                                   />
+                            <TextBox Grid.Column="2" Height="50" Grid.Row="1"
+                                     HorizontalAlignment="Center" x:Name="tbReason"
+                                     VerticalAlignment="Center" 
+                                     Width="450"
+                                     />
+                        </Grid>
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+        </DockPanel>
     </Grid>
 </Window>

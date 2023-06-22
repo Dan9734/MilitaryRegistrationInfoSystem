@@ -146,7 +146,7 @@ namespace MilitaryRegistrationInfoSystem
                     {
                         this.Hide();
                         AddRecruitWindow addRecruitWindow = new AddRecruitWindow(recruit);
-                      //  ClassPD.IDRecruit = recruit.ID;
+                        ClassPD.IDRecruit = recruit.ID;
                         addRecruitWindow.ShowDialog();
                         this.Close();
                     }
@@ -178,11 +178,13 @@ namespace MilitaryRegistrationInfoSystem
         {
 
         }
-        private void tsmiBook_Click(object sender, RoutedEventArgs e)
+        private void tsmiChangeProfile_Click(object sender, RoutedEventArgs e)
         {
-
+            AuthorizationWindow authorizationWindow = new AuthorizationWindow();
+            Close();
+            authorizationWindow.ShowDialog();
         }
-        private void tsmiUser_Click(object sender, RoutedEventArgs e)
+        private void tsmiBook_Click(object sender, RoutedEventArgs e)
         {
 
         }
@@ -195,6 +197,22 @@ namespace MilitaryRegistrationInfoSystem
         private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             Filter();
+        }
+
+        private void tsmiSummons_Click(object sender, RoutedEventArgs e)
+        {
+                SummonsWindow summonsWindow = new SummonsWindow();
+                summonsWindow.ShowDialog();
+            
+               
+        }
+
+        private void tsmiMed_Click(object sender, RoutedEventArgs e)
+        {
+            RecruitMedicalInfoWindow recruitMedical = new RecruitMedicalInfoWindow();
+            Hide();
+            recruitMedical.ShowDialog();
+            Show();
         }
     }
 }

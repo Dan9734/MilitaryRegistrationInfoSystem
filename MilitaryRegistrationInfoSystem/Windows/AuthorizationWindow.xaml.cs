@@ -98,6 +98,7 @@ namespace MilitaryRegistrationInfoSystem.Windows
                 menu.ShowDialog();
             }
 
+
         }
         
         private void Grid_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)

@@ -24,44 +24,55 @@ namespace MilitaryRegistrationInfoSystem.Windows
     /// </summary>
     public partial class RecruitMedicalInfoWindow : Window
     {
-        List<EF.Recruit> recruit = new List<EF.Recruit>();
+        List<EF.MedicalConclusion> medicalConclusions = new List<EF.MedicalConclusion>();
 
         public RecruitMedicalInfoWindow()
         {
             InitializeComponent();
+            AllPersonal.ItemsSource = context.MedicalConclusion.ToList();
+            cbSort.ItemsSource = listForSort;
+            cbSort.SelectedIndex = 0;
+            Filter();
         }
+        List<string> listForSort = new List<string>()
+        {
+            "По умолчанию",
+            "По заключению терапевта",
+            "По дате"
+        };
 
         private void Filter()
         {
-            recruit = context.Recruit.ToList();
-            recruit = recruit.Where(e => e.LName.Contains(tbSearch.Text) || e.FName.Contains(tbSearch.Text) || e.MName.Contains(tbSearch.Text) || e.Phone.Contains(tbSearch.Text)).ToList();
+            medicalConclusions = context.MedicalConclusion.ToList();
+            medicalConclusions = medicalConclusions.Where(e => e.DateOfMedicalExamination.ToString().Contains(tbSearch.Text) ||
+            e.TherapistConclusion.Contains(tbSearch.Text)).ToList();
 
             switch (cbSort.SelectedIndex)
             {
                 case 0:
-                    recruit = recruit.OrderBy(e => e.ID).ToList();
-                    break;
-                case 1:
-                    recruit = recruit.OrderBy(e => e.LName).ToList();
+                    medicalConclusions = medicalConclusions.OrderBy(e => e.ID).ToList();
                     break;
                 case 2:
-                    recruit = recruit.OrderBy(e => e.FName).ToList();
+                    medicalConclusions = medicalConclusions.OrderBy(e => e.TherapistConclusion).ToList();
                     break;
                 case 3:
-                    recruit = recruit.OrderBy(e => e.MName).ToList();
+                    medicalConclusions = medicalConclusions.OrderBy(e => e.DateOfMedicalExamination.ToString()).ToList();
+                    break;
+                default:
+                    medicalConclusions = medicalConclusions.OrderBy(e => e.ID).ToList();
                     break;
             }
 
-            if (recruit.Count == 0)
+            if (medicalConclusions.Count == 0)
             {
                 MessageBox.Show("Записей нет");
             }
-            AllPersonal.ItemsSource = recruit;
+            AllPersonal.ItemsSource = medicalConclusions;
         }
 
         private void cbSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            Filter();
         }
 
         private void tsbAdd_Click(object sender, RoutedEventArgs e)
@@ -82,10 +93,9 @@ namespace MilitaryRegistrationInfoSystem.Windows
         }
         private void ChangeUser_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
             AuthorizationWindow authorizationWindow = new AuthorizationWindow();
+            Close();
             authorizationWindow.ShowDialog();
-            this.Close();
         }
         private void tsmiBook_Click(object sender, RoutedEventArgs e)
         {

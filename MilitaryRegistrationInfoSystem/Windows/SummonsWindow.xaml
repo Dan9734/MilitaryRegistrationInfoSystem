@@ -11,6 +11,7 @@
 
             <MenuItem Header="Система">
                 <MenuItem Header="Выход" Name="tsmiExit" Click="tsmiExit_Click" />
+                <MenuItem Header="Сменить пользователя" Name="tsmiChangeProfile" Click="tsmiChangeProfile_Click" />
             </MenuItem>
             <MenuItem Header="Военнообязанный">
                 <MenuItem Header="Добавить" Name="tsmiAdd" Click="tsbAdd_Click" />
@@ -18,13 +19,6 @@
                 <MenuItem Header="Удалить" Name="tsmiDelete" Click="tsbDelete_Click" />
                 <Separator/>
                 <MenuItem Header="Обновить" Name="tsmiRefresh" Click="tsbRefresh_Click" />
-            </MenuItem>
-            <MenuItem Header="Отчеты">
-                <MenuItem Header="Анкета" Name="tsmiReportRecruitQuestionnaire" Click="tsmiReportRecruitQuestionnaire_Click" />
-                <MenuItem Header="Список изучений" Name="tsmiReportRecruitEduList" Click="tsmiReportRecruitEduList_Click" />
-                <MenuItem Header="Сводный отчет" Name="tsmiReportConsolidate" Click="tsmiReportConsolidate_Click" />
-                <Separator/>
-                <MenuItem Header="Редактировать отчеты" Name="reportEditToolStripMenuItem" IsChecked="False" IsCheckable="True" />
             </MenuItem>
             <MenuItem Header="Настройки">
                 <MenuItem Header="Справочники" Name="tsmiBook" Click="tsmiBook_Click" />
@@ -109,17 +103,14 @@
             MouseDoubleClick="LVEmployee_MouseDoubleClick"
             AutoGenerateColumns="False"  Background="{x:Null}" Foreground="black" BorderBrush="{x:Null}"
             SelectionChanged="AllPersonal_SelectionChanged"
-            KeyUp="AllPersonal_KeyUp"
+           
             IsReadOnly="True" Height="420" Margin="0,64,0,0"
             >
             <DataGrid.Columns >
-                <!--<DataGridTextColumn x:Name="фамилияColumn" Binding="{Binding Path=LName}" Header="Фамилия" Width="150" />
-                <DataGridTextColumn x:Name="имяColumn" Binding="{Binding Path=FName}" Header="Имя" Width="120" />
-                <DataGridTextColumn x:Name="отчествоColumn" Binding="{Binding Path=MName}" Header="Отчество" Width="150" />
-                <DataGridTextColumn Header="Дата рождения" Width="*" Binding="{Binding DateBirth}"/>
-                <DataGridTextColumn Header="Паспорт (серия)" Width="*" Binding="{Binding S_Pass}"/>
-                <DataGridTextColumn Header="Паспорт (номер)" Width="*" Binding="{Binding N_Pass}"/>
-                <DataGridTextColumn Header="Результат мед комиссии" Width="*" Binding="{Binding InSummary}" Foreground="Black"/>-->
+                <DataGridTextColumn x:Name="фамилияColumn" Binding="{Binding Path=Recruit.LName}" Header="Фамилия" Width="150" />
+                <DataGridTextColumn x:Name="имяColumn" Binding="{Binding Path=DateVisiting}" Header="Date" Width="120" />
+                <DataGridTextColumn x:Name="отчествоColumn" Binding="{Binding Path=MailingAddres}" Header="Address" Width="150" />
+                <DataGridTextColumn Header="Reason" Width="*" Binding="{Binding ReasonForVisiting}" />
             </DataGrid.Columns>
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">

@@ -15,44 +15,12 @@
                 <MenuItem Header="Сменить пользователя" Name="tsmiChangeUser" Click="ChangeUser_Click" />
             </MenuItem>
             <MenuItem Header="Военнообязанный">
-                <!--<MenuItem Header="Добавить" Name="tsmiAdd" Click="tsbAdd_Click" />
-                <MenuItem Header="Редактировать" Name="tsmiEdit" Click="tsbEdit_Click" />
-                <MenuItem Header="Удалить" Name="tsmiDelete" Click="tsbDelete_Click" />-->
                 <Separator/>
                 <MenuItem Header="Обновить" Name="tsmiRefresh" Click="tsbRefresh_Click" />
             </MenuItem>
         </Menu>
         <StackPanel DockPanel.Dock="Top" Margin="0 20 0 0">
             <ToolBar  Height="45">
-                <!--<Button x:Name="tsbLogin" 
-                        ToolTip="Вход" 
-                        Click="tsbLogin_Click">
-                    <Image Source="/Resources/door_in_3715.png"/>
-                </Button>-->
-                <!--<Separator />-->
-
-                <!--<Button x:Name="tsbAdd" 
-                        ToolTip="Добавить" 
-                        Click="tsbAdd_Click">
-                    <Image Source="/Resources/database_add_2107.png" />
-                </Button>-->
-                <!--<Button  x:Name="tsbEdit" 
-                         ToolTip="Редактировать" 
-                         Click="tsbEdit_Click">
-                    <Image Source="/Resources/database_edit_7543.png" />
-                </Button>-->
-
-                <!--<Button x:Name="tsbDelete" 
-                        ToolTip="Удалить" 
-                        Click="tsbDelete_Click">
-                    <Image Source="/Resources/database_delete_7487.png"/>
-                </Button>-->
-                <!--<Separator />-->
-                <!--<Button x:Name="tsbRefresh" 
-                        ToolTip="Обновить" 
-                        Click="tsbRefresh_Click">
-                    <Image Source="/Resources/database_refresh_9744.png" />-->
-                <!--</Button>-->
                 <TextBlock Text="Поиск:"
                  FontSize="14"
                  Width="80"             
@@ -101,9 +69,9 @@
             IsReadOnly="True" Height="420" Margin="0,64,0,0"
             >
             <DataGrid.Columns >
-                <DataGridTextColumn x:Name="фамилияColumn" Binding="{Binding Path=LName}" Header="Фамилия" Width="*" />
-                <DataGridTextColumn x:Name="имяColumn" Binding="{Binding Path=FName}" Header="Имя" Width="*" />
-                <DataGridTextColumn x:Name="отчествоColumn" Binding="{Binding Path=MName}" Header="Отчество" Width="*" />
+                <DataGridTextColumn x:Name="фамилияColumn" Binding="{Binding Path=Recruit.LName}" Header="Фамилия" Width="*" />
+                <DataGridTextColumn x:Name="имяColumn" Binding="{Binding Path=Recruit.FName}" Header="Имя" Width="*" />
+                <DataGridTextColumn x:Name="отчествоColumn" Binding="{Binding Path=Recruit.MName}" Header="Отчество" Width="*" />
                 <DataGridTextColumn Header="Результат медкомиссии" Width="*" Binding="{Binding InSummary}"/>
                 <DataGridTextColumn Header="Дата" Width="*" Binding="{Binding DateOfMedicalExamination}"/>
                 <DataGridTextColumn Header="Заключение терапевта" Width="*" Binding="{Binding TherapistConclusion}"/>
